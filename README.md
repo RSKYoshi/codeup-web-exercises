@@ -1,2 +1,2 @@
-# codeup-web-exercise
+# codeup-web-exercises
 ## Author: Ryan Yoshimura

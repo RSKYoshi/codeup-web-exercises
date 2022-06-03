@@ -13,6 +13,7 @@
 //
 //     alert(response + ' is a great color!')
 
+//Movie Rental section//
 
 // alert('Welcome to the Movie rental section!');
 //
@@ -25,9 +26,13 @@
 // console.log(H);
 //
 //
-// var total = [parseFloat(LM) + parseFloat(BB) + parseFloat(H)] * CPD; //Why does this need brackets to work? Without them, the result is 11 instead of 27 for 3,5,1//
+// var total = [parseInt(LM) + parseInt(BB) + parseInt(H)] * CPD; //Why does this need brackets to work? Without them, the result is 11 instead of 27 for 3,5,1//
 // console.log(total)
 // alert('Your total will be' + ' ' + total + ' ' + 'dollars')
+
+
+//Big Tech payment//
+
 
 //alert('Big Tech Section')
 
@@ -55,6 +60,9 @@
      //alert('The total earned this week is' + ' ' + paymentforweek + ' ' + 'dollars')
 
 
+//Class enrollment//
+
+
 //alert('Class Enrollment')
 //
 //let timeinschedule = confirm('Is your schedule clear?')
@@ -78,11 +86,17 @@
   //      alert('Enrolled')
   //      console.log(confirm)
 
-let moreThanTwo = confirm('Do you have more than two items in your cart?')
-let offerStillValid = confirm('Is the offer on the product still valid?')
-let premiumMember = confirm('Are you a premium member?')
-alert( 'Discount?' + ' ' + (moreThanTwo && offerStillValid || premiumMember))
-    if(true) {alert("You get the discount")} else {"You don't get the discount"}
+//Product Offer//
+
+// let moreThanTwo = confirm('Do you have more than two items in your cart?')
+// let offerStillValid = confirm('Is the offer on the product still valid?')
+// let premiumMember = confirm('Are you a premium member?')
+// alert( 'Discount?' + ' ' + (moreThanTwo && offerStillValid || premiumMember))
+//     if(true) {alert("You get the discount")} else {"You don't get the discount"}
+
+
+alert("Product Offer Section")
+confirm("Are you a premium member?")
 
 
 

@@ -1,3 +1,5 @@
+(function() {
+
 "use strict";
 
 /**
@@ -10,7 +12,7 @@
  */
 
 function sayHello(name) {
-    return "Hello," + ' ' + name;
+    return "Hello," + " " + name;
 }
 
 /**
@@ -61,9 +63,18 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-//  function isTwo(number) {
+
+// 1) function name = isTwo
+// 2) take in one  parameter of the  number
+// 3) return boolean value
+// 4) boolean value based on T/F whether number==2
+//Here is the function from the 4 steps listed above
+//      function isTwo(number) {
 //      return number==2
-// }
+//}
+
+//Here is the function as a result  of : Call the function 'isTwo' passing the variable 'random' as a argument.//
+
 function isTwo(random) {
     return random==2
 }
@@ -85,6 +96,10 @@ function calculateTip(tippercentage,bill){
     return bill*tippercentage
 }
 
+//function  calculateTip(tippercentage, bill){
+//    return bill/tippercentage
+//}
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -100,7 +115,7 @@ var FTip = calculateTip(Tip,Bill)
     console.log(FTip)
 
 let total = parseFloat(FTip) + parseFloat(Bill)
-alert('Your total is ' + total + " dollars")
+alert("Your total is " + total + " dollars")
 
 /**
  * TODO:
@@ -117,7 +132,19 @@ alert('Your total is ' + total + " dollars")
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(price,discountP){
+var price = prompt("What is the original price of your  product?")
+    console.log(price);
+var discountP = prompt("What is the discount?")
+    console.log(discountP);
+
+function applyDiscount(price, discountP){
     var oPrice = (price)
     return oPrice - (oPrice * discountP)
 }
+alert("Your final price is " + applyDiscount(price,discountP) + " dollars")
+
+
+})();
+
+
+

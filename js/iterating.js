@@ -15,8 +15,10 @@ var names = ["Destiney", "Ryan", "Kalei", "Melia"]
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-
-console.log([names])
+    console.log("Logging length of names")
+    console.log(names.length)
+    console.log("-------")
+//console.log([names])
 
     /**
      * TODO:
@@ -25,17 +27,22 @@ console.log([names])
      */
 
 // how does it access the index....[" + index + "]
-names.forEach(function (name,index){
-    console.log("[" +index + "] =" + name);
-    })
-
+// names.forEach(function (name,index){
+//     console.log("[" +index + "] =" + name);
+//     })
+    console.log("Each element is logged below ")
+    console.log(names[0])
+    console.log(names[1])
+    console.log(names[2])
+    console.log(names[3])
+    console.log("-------")
 
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-
+//  console.log(This uses a for loop method)
 // for(var i=0; i < 1; i++) {
 //     console.log(names[0])
 //     console.log(names[1])
@@ -47,7 +54,7 @@ names.forEach(function (name,index){
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-
+console.log("This is refactored using a forEach function")
 for (var i=0; i < 1; i++){
 names.forEach(function (name,index){
   console.log(name);
@@ -69,19 +76,20 @@ names.forEach(function (name,index){
      */
 
 
-function firstItem(x){
+function first(x){
     var array =  x
-        console.log(array[0]);
+        // console.log(array[0]);
+        return array[0]
     }
 
-function secondItem(x){
+function second(x){
     var array = x
     // console.log(array[1]) alt method
     return array[1]
 }
 
 //arrays[arrays.length - 1] = this will access the last array element
-function lastItem(x){
+function last(x){
     return x[x.length -1]
 }
 

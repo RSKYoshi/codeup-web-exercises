@@ -1,4 +1,4 @@
-(function(){
+
     "use strict";
 
     /**
@@ -66,25 +66,32 @@ var names = ["Destiney", "Ryan", "Kalei", "Melia"]
      */
 
 
-function first([x]){
-    x[0]
+function firstItem(x){
+    var array =  x
+        console.log(array[0]);
     }
 
-function second([x]){
-    x[1]
+function secondItem(x){
+    var array = x
+    // console.log(array[1]) alt method
+    return array[1]
 }
 
 //arrays[arrays.length - 1] = this will access the last array element
-function last(x){
+function lastItem(x){
     return x[x.length -1]
 }
 
-let favshows = ['5','7', '8', '9']
-let removedlastshow = favshows.shift();
-console.log("removed show was " + removedlastshow)
 
 
-})();
+
+
+
+//this is for manipulating practice
+// let favshows = ['5','7', '8', '9']
+// let removedlastshow = favshows.shift();
+// console.log("removed show was " + removedlastshow)
+
 
 //why does this show my array value itself vs if I take [i] out it shows the entire array 3x?
 // for(let i = 0; i < shapes.length; i++){console.log(favFood[i])}

@@ -15,16 +15,19 @@ var names = ["Destiney", "Ryan", "Kalei", "Melia"]
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-// console.log([names])
+
+console.log([names])
+
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-    //how does it access the index....[" + index + "]
-// names.forEach(function (name,index){
-//     console.log("[" +index + "] =" + name);
-//     })
+
+// how does it access the index....[" + index + "]
+names.forEach(function (name,index){
+    console.log("[" +index + "] =" + name);
+    })
 
 
     /**
@@ -45,11 +48,11 @@ var names = ["Destiney", "Ryan", "Kalei", "Melia"]
      * Refactor your above code to use a `forEach` loop
      */
 
-    // for(var i=0; i < 1; i++){
-    //     names.forEach(function (name,index){
-    //         console.log(name);
-    //     })
-    // }
+for (var i=0; i < 1; i++){
+names.forEach(function (name,index){
+  console.log(name);
+  })
+}
 
     /**
      * TODO:

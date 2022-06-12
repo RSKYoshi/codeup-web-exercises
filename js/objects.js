@@ -67,6 +67,12 @@ var person = name
         {name: 'George', amount: 320}
     ];
 
+    //my notes to start
+    //If a shopper spends x>200, they get 12% discount.
+    //each line: name, amount before each discount, the discount price(if applicable), and Total due
+
+
+
     //this one is with the $ signs to take away 'dollars', not sure if it's the $ sign that isn't letting me pull the number
     //it sure was the $ sign. After refactoring without the $ in the discount function, it worked.
     //
@@ -89,21 +95,19 @@ var person = name
             return (amount*discountPercentage).toFixed(2)
         } else return 0
     }
+    //this is good
+    // shoppers.forEach(function(shopper) {
+    //     console.log(shopper.name + " bought" + " " + shopper.amount + " dollars worth of groceries" + " with a discount of " + discount(shopper.amount) + " dollars" + " and a final total of " + (shopper.amount - discount(shopper.amount)).toFixed(2) + " dollars")
+    // })
 
-    shoppers.forEach(function(shopper) {
-        console.log(shopper.name + " bought" + " " + shopper.amount + " dollars worth of groceries" + " with a discount of " + discount(shopper.amount) + " dollars" + " and a final total of " + (shopper.amount - discount(shopper.amount)).toFixed(2) + " dollars")
-    })
+//-------------
 
-
-
-//this forEach loop didnt work: it returned 3x the same shopper
+//this forEach loop didn't work: it returned 3x the same shopper
     // shoppers.forEach(function(name) {
     //the[0] accesses that particular shopper and amount....good for targeting discountprice?
     //     console.log(shoppers[0].name + " bought" + " " + shoppers[0].amount + " dollars worth of groceries")
     // })
 
-    //If a shopper spends x>200, they get 12% discount.
-    //each line: name, amount before each discount, the discount price(if applicable), and Total due
 
 
     /** TODO:
@@ -118,6 +122,49 @@ var person = name
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+var books = [
+        {
+            title: "The Lord of the Rings",
+            author: {
+                firstName: "J.R.R ",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Book of Five Rings",
+            author: {
+                firstName: "Miyamoto ",
+                lastName: "Musashi"
+            }
+        },
+        {
+            title: "The Iliad of Homer",
+            author: {
+                firstName: "Homer ",
+                lastName: " "
+            }
+        },
+        {
+            title: "How to Win Friends and Influence People",
+            author: {
+                firstName: "Dale ",
+                lastName: "Carnegie"
+            }
+        },
+        {
+            title: "Animal farm",
+            author: {
+                firstName: "George ",
+                lastName: "Orwell"
+            }
+        }
+    ]
+
+// console.log(books[4].title)
+
+
+
 
     /**
      * TODO:
@@ -143,6 +190,13 @@ var person = name
      *      ---
      *      ...
      */
+
+books.forEach(function(book, index) {
+    console.log("Book # " + (index+1))
+    console.log("Title: " + book.title)
+    console.log("Author: " + book.author.firstName + book.author.lastName)
+    console.log(" ")
+    })
 
     /**
      * Bonus:

@@ -209,5 +209,8 @@ books.forEach(function(book, index) {
      *   `showBookInfo` function.
      */
 
+    function createBook(title, authorName){
+        return x
+    }
 
 })();

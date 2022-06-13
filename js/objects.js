@@ -11,6 +11,7 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+
 var name = {}
     name.firstName = "Ryan"
     name.lastName = "Yoshimura"
@@ -31,6 +32,7 @@ var person = name
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    //'this' refers to the object in the function  (name)
     person.sayHello = function () {
         console.log("Hello from " + this.firstName + " " + this.lastName)
     }
@@ -87,7 +89,7 @@ var person = name
     // shoppers.forEach(function(shopper) {
     //     console.log(shopper.name + " bought" + " " + shopper.amount + " dollars worth of groceries" + discount(shopper.amount) + " "        )
     // })
-
+//-----------------------------------------
     function discount(x){
         var discountPercentage = .12
         var amount=x
@@ -95,12 +97,34 @@ var person = name
             return (amount*discountPercentage).toFixed(2)
         } else return 0
     }
-    //this is good
-    // shoppers.forEach(function(shopper) {
-    //     console.log(shopper.name + " bought" + " " + shopper.amount + " dollars worth of groceries" + " with a discount of " + discount(shopper.amount) + " dollars" + " and a final total of " + (shopper.amount - discount(shopper.amount)).toFixed(2) + " dollars")
-    // })
+//     //this is good
+    shoppers.forEach(function(shopper) {
+        console.log(shopper.name + " bought" + " " + shopper.amount + " dollars worth of groceries" + " with a discount of " + discount(shopper.amount) + " dollars" + " and a final total of " + (shopper.amount - discount(shopper.amount)).toFixed(2) + " dollars")
+    })
+console.log(" ")
 
-//-------------
+//------------------------------------------
+//alt way to do this, need help to get it working
+//     var shoppers = [
+//         {name: 'Cameron', amount: 180},
+//         {name: 'Ryan', amount: 250},
+//         {name: 'George', amount: 320}
+//     ];
+//
+//  for(let i = 0; 1 < shoppers.length; i++) {
+//      const shopper = shoppers[i];
+//      // console.log(shopper)
+//      let outputString = ${shoppers.name} ${shoppers.amount};
+//
+//  }
+//
+//  if(shoppers.amount > 200){
+//      let discount = shoppers.amount * .12
+//      let after discount amount = shoppers.amount - discount
+//
+//      outputString += ${discount.toFixed} ${amount}
+//  }
+//     console.log(outputString);
 
 //this forEach loop didn't work: it returned 3x the same shopper
     // shoppers.forEach(function(name) {
@@ -198,6 +222,16 @@ books.forEach(function(book, index) {
     console.log(" ")
     })
 
+    //alt below, need to get it working
+// for(let i = 0; i < books.length; i++) {
+//     const book = books[i];
+//     let outputString = book # ${i + 1}
+// Title: ${book.title}
+// Author: ${book.author.firstName} ${book.author.lastName}
+
+//---------------------;
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -209,8 +243,32 @@ books.forEach(function(book, index) {
      *   `showBookInfo` function.
      */
 
-    function createBook(title, authorName){
-        return x
+
+
+    function createBook(title, firstName, lastName) {
+        var book = {}
+            book.title = title
+            book.fN = firstName
+            book.lN = lastName
+
+        return console.log(book)
     }
 
+
+
+        // return [
+        //     {
+        //         title: title,
+        //         author: {
+        //             firstName
+        //             lastName
+        //         }
+        //
+        //     }
+        // ]
+
+
+
+
 })();
+

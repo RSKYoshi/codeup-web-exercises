@@ -39,7 +39,7 @@ const users = [
     }
 ];
 
-//1 // Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
+//2 // Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 
 
 
@@ -52,15 +52,18 @@ const users = [
 // const threeLangMin = users.filter(filterByLanguageAmount)
 // console.log(threeLangMin)
 
-//alt
+// alt
 // users.filter(function (user) {
 //     return user.languages.length >=3;
 // })
 
+// console.log(users.filter(function (user) {
+//     return user.languages.length >=3;
+// }))
 
-//2     Use .map to create an array of strings where each element is a user's email address
+//3     Use .map to create an array of strings where each element is a user's email address
 //need to call a function on each user that extracts emails
-//
+
 // function userEmail(user) {
 //     return user.email
 // }
@@ -73,14 +76,14 @@ const users = [
 //     return user.email;
 // })
 
-//3     Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+//4     Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
-let initialValue = 0;
-
-const totalYearsExp = users.yearsOfExperience.reduce(function (previousValue,currentValue){
-    return previousValue + currentValue.yearsOfExperience} , initialValue
-);
-console.log(totalYearsExp)
+// let initialValue = 0;
+//
+// const totalYearsExp = users.yearsOfExperience.reduce(function (previousValue,currentValue){
+//     return previousValue + currentValue.yearsOfExperience} , initialValue
+// );
+// console.log(totalYearsExp)
 
 //alt
 
@@ -93,7 +96,7 @@ console.log(totalYearsExp)
 // console.log(averageYears)
 
 
-//4     Use .reduce to get the longest email from the list of users.
+//5     Use .reduce to get the longest email from the list of users.
 
 //doesn't work
 // const longestEmail = users.reduce(function (longestEmailSoFar, user){
@@ -105,7 +108,7 @@ console.log(totalYearsExp)
 // console.log(longestEmail)
 
 
-//5     Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+//6     Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
 
 //alt

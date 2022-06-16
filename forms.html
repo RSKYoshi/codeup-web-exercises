@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<!--with post, info is not in the url. With GET, my data apppears in the url-->
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <input type="hidden" name="user_id">
+        <label for="name">Username</label>
+            <input name="username" id="name" type="text"  placeholder="username">
+        <p>
+        <label>Email</label>
+            <input name="text" id="email" value="@yahoo.com" placeholder="Enter email">
+        <p>
+        <label>bio</label>
+            <textarea name="text"></textarea>
+        <p>
+        <label>How did you hear about us?</label>
+        &nbsp;
+        <label for="Billboard">Billboard
+            <input type="radio" name="1" id="Billboard" value="Billboard">
+        </label>
+        &nbsp;
+        <label>Radio
+            <input type="radio" name="2" id="radio" value="radio">
+        </label>
+        &nbsp;
+        <label>Advertisement
+            <input type="radio" name="3" id="advertisement" value="advertisement">
+        </label>
+        &nbsp;
+        <label>Internet advertisement
+            <input type="radio" name="1" id="internet advertisement" value="internet advertisement">
+        </label>
+        &nbsp;
+        <label>Other
+            <input type="radio" name="1" id="other" value="other">
+        </label>
+        <p>
+        <label>What browser are you using? &nbsp;</label>
+        <select name="Web browser currently using">
+            <option value="0">None selected</option>
+            <option value="chrome">Chrome</option>
+            <option value="chrome">Firefox</option>
+            <option value="chrome">Bing</option>
+            <option value="chrome">Internet Exploder</option>
+        </select>
+        <p>
+
+
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>

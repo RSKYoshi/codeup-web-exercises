@@ -1,3 +1,53 @@
 .fancy-header {
     color: purple;
 }
+
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #0000FF;
+    text-decoration:  underline;
+}
+
+body {
+    background-color: goldenrod;
+    background-image: url(../img/shorebreak2.jpg);
+    background-position: auto;
+    background-attachment: fixed;
+}
+
+ul {
+    list-style: "😎";
+ }
+
+body {
+    font-style: italic;
+}
+
+table {
+    padding: 10px, 20px;
+
+}
+td {
+    padding: 20px;
+}
+tr {
+    padding:  20px;
+}
+
+a:link {
+    color: aquamarinegreen
+}
+a:visited{
+    color: purple;
+}
+a:hover{
+    color: cyan;
+}
+a:active{
+    color: antiquewhite;
+}
+
+

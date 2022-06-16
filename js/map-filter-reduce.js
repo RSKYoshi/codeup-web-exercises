@@ -51,8 +51,8 @@ const users = [
 //
 // const threeLangMin = users.filter(filterByLanguageAmount)
 // console.log(threeLangMin)
-
-// alt
+//
+// // alt
 // users.filter(function (user) {
 //     return user.languages.length >=3;
 // })
@@ -71,7 +71,7 @@ const users = [
 // const userEmails = users.map(userEmail);
 // console.log(userEmails)
 
-//alt
+// alt
 // users.map(function (user){
 //     return user.email;
 // })
@@ -79,12 +79,12 @@ const users = [
 //4     Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
 //works!!! just had to delete .yearsOfExperience from in between 'users' and 'reduce' in 'users.reduce'
-// let initialValue = 0;
-//
-// const totalYearsExp = users.reduce(function (previousValue,currentValue){
-//     return previousValue + currentValue.yearsOfExperience} , initialValue
-// );
-// console.log(totalYearsExp)
+let initialValue = 0;
+
+const totalYearsExp = users.reduce(function (previousValue,currentValue){
+    return previousValue + currentValue.yearsOfExperience} , initialValue
+);
+console.log(totalYearsExp)
 
 //alt
 
@@ -98,15 +98,17 @@ const users = [
 
 //5     Use .reduce to get the longest email from the list of users.
 
-//this works!!
-//how does 'longestEmailSoFar' know that it is targeting users.email?
-// const longestEmail = [users.reduce(function (longestEmailSoFar,user){
-//
-//    if(user.email.length >= longestEmailSoFar.length) {
-//        return user.email;
-//    } return longestEmailSoFar
-// },"")]
-// console.log(longestEmail)
+// this works!!
+// how does 'longestEmailSoFar' know that it is targeting users.email?
+
+const longestEmail = users.reduce(function (longestEmailSoFar,user){
+
+   if(user.email.length >= longestEmailSoFar.length) {
+       return user.email;
+   } return longestEmailSoFar
+},"")
+
+console.log(longestEmail)
 
 //6     Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
@@ -128,10 +130,39 @@ const users = [
 //Bonus
 //Use .reduce to get the unique list of languages from the list of users.
 
+//figure this out
+// let userLanguages = users.reduce(function(uniqueSoFar, user){
+//     return uniqueSoFar.concat(user.languages)
+//     }, [])
+//
+// var uL = userLanguages
+// // console.log(uL)
+//
+// let uniqueLanguages = new Set(userLanguages);
+// console.log(uniqueLanguages)
 
-let uniqueL = users.reduce(function(uniqueSoFar, user){
-    for()
-})
+
+// this is good!!
+
+// let userLanguages = users.reduce(function(uniqueSoFar, user){
+//     return uniqueSoFar + user.languages + ","
+// }, "")
+// var uL = userLanguages
+// // console.log(uL)
+// //good so far
+// //need to .splt the  long string here
+//
+// var suL=uL.split(',')
+//
+//
+// let uniqueLanguages = [...new Set(suL)];
+// console.log(uniqueLanguages)
+
+
+//if there are more than  one instance  of the  same value, do not  add//
+
+
+
 
 
 

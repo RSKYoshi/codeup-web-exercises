@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+#mi {
+    background-color: #87a7ec;
+    padding: 10px;
+    color: darkblue;
+    margin: 10px;
+    border-color: darkgrey;
+    border-radius: 10px;
+    height: 20px;
+    text-align: left;
+    font-size: 15px;
+}
+
+#ms {
+    background-color: lightgreen;
+    padding: 10px;
+    color: darkgreen;
+    margin: 10px;
+    border-color: darkgrey;
+    border-radius: 10px;
+    height: 20px;
+    text-align: left;
+    font-size: 15px;
+}
+
+#mw {
+    background-color: #fffee0;
+    padding: 10px;
+    color: rgba(255, 221, 0, 0.47);
+    margin: 10px;
+    border-color: darkgrey;
+    border-radius: 10px
+    height: 20px;
+    text-align: left;
+    font-size: 15px;
+}
+
+#me {
+    background-color: palevioletred;
+    padding: 10px;
+    color: darkred;
+    margin: 10px;
+    border-color: darkgrey;
+    border-radius: 10px;
+    height: 20px;
+    text-align: left;
+    font-size: 15px
+
+}
+

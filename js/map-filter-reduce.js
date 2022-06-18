@@ -118,13 +118,13 @@ const users = [
 // console.log(userNames)
 
 //alt method
-let uN = []
-for(var i=0;i<users.length;i++){
-    if(users[i].name !=="") {
-        uN.push(users[i].name);
-    }
-}
-console.log(uN.join(","));
+// let uN = []
+// for(var i=0;i<users.length;i++){
+//     if(users[i].name !=="") {
+//         uN.push(users[i].name);
+//     }
+// }
+// console.log(uN.join(","));
 
 // let userNames = users.reduce(function(userNamesSoFar,user){
 //     console.log(userNamesSoFar)
@@ -141,11 +141,11 @@ console.log(uN.join(","));
 
 
 
-for(var i=0;i<10;i++){
-    if(i<10){
-        console.log(i)
-    }
-}
+// for(var i=0;i<10;i++){
+//     if(i<10){
+//         console.log(i)
+//     }
+// }
 
 
 
@@ -158,6 +158,7 @@ for(var i=0;i<10;i++){
 //     return uniqueSoFar.concat(user.languages)
 //     }, [])
 //
+//
 // var uL = userLanguages
 // // console.log(uL)
 //
@@ -165,21 +166,23 @@ for(var i=0;i<10;i++){
 // console.log(uniqueLanguages)
 
 
-// this is good!!
+// this is good!! 
+ 
+let userLanguages = users.reduce(function(uniqueSoFar, user){ 
+    return uniqueSoFar + user.languages + "," 
+}, "") 
+var uL = userLanguages 
+console.log(uL) 
 
-// let userLanguages = users.reduce(function(uniqueSoFar, user){
-//     return uniqueSoFar + user.languages + ","
-// }, "")
-// var uL = userLanguages
-// // console.log(uL)
-// //good so far
-// //need to .splt the  long string here
-//
-// var suL=uL.split(',')
-//
-//
-// let uniqueLanguages = [...new Set(suL)];
-// console.log(uniqueLanguages)
+
+//good so far
+//need to .splt the  long string here
+
+var suL=uL.split(',')
+console.log(suL)
+
+let uniqueLanguages = [...new Set(suL)];
+console.log(uniqueLanguages)
 
 
 //if there are more than  one instance  of the  same value, do not  add//

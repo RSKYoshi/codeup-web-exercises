@@ -1,19 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@500&display=swap');
+
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+
 }
 
 nav {
-    background: lightgrey;
+    background: rgba(107, 107, 107, 0.47);
 }
 
 .container {
-    height: 33px;
+    height: 5em;
     display: flex;
+    border: whitesmoke;
+    border-style: outset;
+    border-width: thin;
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px rgba(0,0,0,.5);
 }
+
 ul {
     list-style: none;
     padding: 0;
@@ -30,21 +41,31 @@ nav a {
 }
 
 nav ul li {
-    padding: 5px;
-    font-size: 12px;
-    font-weight: bold;
-
+    padding: 17px;
+    font-size: 30px;
+    font-weight: bolder;
+    /*font-family: "Heiti TC";*/
 }
 
 nav ul li:nth-child(5) {
     margin: auto;
-    padding-top: .2em;
-    padding-bottom: 3em;
-    font-size: 25px;
-
-
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 3em;
+    /*align-content: center;*/
+    position: absolute-center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 nav a:hover {
     color: blue;
+}
+
+.icon {
+    width: 14px;
+}
+
+.anchors {
+    font-size: 14px;
+    font-family: 'Work Sans', sans-serif;
 }

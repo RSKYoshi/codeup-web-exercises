@@ -1,0 +1,16 @@
+<style>
+.docrob-tron {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 160px;
+    align-items: center;
+}
+</style>
+
+  ...
+
+<div class="docrob-tron" style="background-image: url('../assets/pizza.png'); background-size: cover">
+                                                                                                     <h2 class="pt-3 pb-3 text-center w-100" style="background-color: rgba(255,255,255,0.8); ">Welcome to Pizza
+                                                                                                                                                                                              World!</h2>
+                                                                                                                                                                                                      </div>

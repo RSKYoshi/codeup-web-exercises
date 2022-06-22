@@ -1,0 +1,36 @@
+.navbar-toggler-icon {
+    background: rgba(81, 187, 27, 0.44);
+}
+
+.user-profile-pic {
+    width: 12px;
+}
+
+.nav-item {
+
+}
+
+.nav-link {
+    color: black;
+}
+
+#main-navigation :nth-child(4) {
+    width: 1050px;
+}
+
+.navbar {
+    align-items: center;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav {
+    padding-left: 12px;
+
+}
+
+.btn {
+
+}

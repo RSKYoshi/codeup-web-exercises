@@ -72,12 +72,12 @@
 
             <div class="tab-pane fade show active card" id="sizeCrust" role="tabpanel" aria-labelledby="sizeCrust-tab">
                 <div class="card-header text-white bg-primary">
-                    Choose size and Crust
+                    Choose Size and Crust
                 </div>
                 <!--            hand tossed card-->
                 <div class="card-body">
-                    <div id="inner-card-1" class="card text-dark bg-light mb-2">
-                        <div class="card-header ">
+                    <div id="sc-card-1" class="card text-dark bg-light mb-2">
+                        <div class="card-header">
                             Hand Tossed
                         </div>
 
@@ -91,15 +91,15 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">Medium ("12")</label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">Medium ("12")</label>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     &nbsp;&nbsp;
                     <!--        crispy thin card-->
-                    <div id="inner-card-2" class="card text-dark bg-light ">
+                    <div id="sc-card-2" class="card text-dark bg-light ">
                         <div class="card-header ">
                             Crispy Thin
                         </div>
@@ -107,14 +107,14 @@
                             <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
                             <li class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">Medium ("12")</label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault3">Medium ("12")</label>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">Large ("14")</label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                    <label class="form-check-label" for="flexRadioDefault4">Large ("14")</label>
                                 </div>
                             </li>
                         </ul>
@@ -125,14 +125,131 @@
                 </div>
             </div>
             <!--tab 2 cards here-->
-            <div class="tab-pane fade" id="cheeseSauce" role="tabpanel" aria-labelledby="cheese-tab">tab2</div>
+            <div class="tab-pane fade card" id="cheeseSauce" role="tabpanel" aria-labelledby="cheese-tab">
+                <div class="card-header text-white bg-primary">
+                    Choose Cheese and Sauce
+                </div>
+                <!--            cheese card-->
+                <div class="card-body">
+                    <div id="cs-card-1" class="card text-dark bg-light mb-2">
+                        <div class="card-header">
+                            Cheese
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">How much?</li>
+                            <li class="list-group-item">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Normal</option>
+                                    <option value="2">Less</option>
+                                    <option value="3">Extra</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    &nbsp;&nbsp;
+                    <!--        sauce card-->
+                    <div id="cs-card-2" class="card text-dark bg-light ">
+                        <div class="card-header ">
+                            Sauce
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">What type?</li>
+                            <li class="list-group-item">
+                            <li class="list-group-item">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Tomato</option>
+                                    <option value="2">Alfredo</option>
+                                    <option value="3">None</option>
+                                </select>
+                            </li>
+                            </li>
+                            <li class="list-group-item">How Much?</li>
+                            <li class="list-group-item">
+                            <li class="list-group-item">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Normal</option>
+                                    <option value="2">Less</option>
+                                    <option value="3">Extra</option>
+                                </select>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+<!--                next buttons here-->
+                    <div class="container card-footer d-flex justify-content-end">
+                        <button class="btn btn-primary" type="submit">< Previous</button>
+                        <button class="btn btn-primary" type="submit">Next Step ></button>
+                    </div>
+                </div>
+            </div>
 
             <!--tab 3 cards here-->
-            <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">tab 3</div>
+            <div class="tab-pane fade card" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+                <div class="card-header text-white bg-primary">
+                    Choose Toppings
+                </div>
+                <!--            hand tossed card-->
+                <div class="card-body">
+                    <div id="sc-card-1" class="card text-dark bg-light mb-2">
+                        <div class="card-header">
+                            Choose Meats
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault21">
+                                    <label class="form-check-label" for="flexRadioDefault21">Beef</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault22">
+                                    <label class="form-check-label" for="flexRadioDefault22">Ham</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault23">
+                                    <label class="form-check-label" for="flexRadioDefault23">Philly Steak</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault24">
+                                    <label class="form-check-label" for="flexRadioDefault24">Bacon</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    &nbsp;&nbsp;
+                    <!--        crispy thin card-->
+                    <div id="sc-card-2" class="card text-dark bg-light ">
+                        <div class="card-header ">
+                            Choose Non-Meats
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault3">Medium ("12")</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                    <label class="form-check-label" for="flexRadioDefault4">Large ("14")</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container card-footer d-flex justify-content-end">
+                    <button class="btn btn-primary" type="submit">Checkout logo here</button>
+                </div>
+            </div>
         </div>
-
-<!--        end of the container from line 45-->
     </div>
+<!--        end of the container from line 45-->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

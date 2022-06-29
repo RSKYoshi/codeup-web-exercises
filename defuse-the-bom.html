@@ -9,7 +9,7 @@
 
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
-
+<input type="button" value="Reset the BOM" id="reset" onclick="document.location.reload()"></input>
 <script>
   (function() {
     "use strict";
@@ -21,7 +21,7 @@
 
     function updateTimer() {
       if (detonationTimer === 0) {
-        alert('EXTERMINATE!');
+        alert('EXTERMINATE! (loud explosion noises)');
         document.body.innerHTML = '';
       } else if (detonationTimer > 0) {
         document.getElementById('timer').innerHTML = detonationTimer;
@@ -33,6 +33,7 @@
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
+
     function defuseTheBOM() {
       clearInterval(startTimer);
     }
@@ -46,5 +47,7 @@
     defuser.addEventListener('click', defuseTheBOM);
   })();
 </script>
+
+<img
 </body>
 </html>

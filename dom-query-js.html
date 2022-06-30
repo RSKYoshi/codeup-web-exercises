@@ -31,7 +31,8 @@
   <button id="dbidBlue">dbid"1" blue</button>
   <button id="missionA">Mission Accomplished!</button>
   <button id="rL1">Deactivate Main Header button</button>
-
+    <p>
+  <button id="rL2">Deactivate Sub-header button</button>
 
 
     <script>
@@ -41,24 +42,35 @@
       // TODO: Uncomment next line and get the main header element by id
       var mainHeader = document.getElementById("main-header");
 
-
-
       // TODO: Set inner html of mainHeader to "JavaScript is Cool"
       var listener1 = function (event) {
         mainHeader.innerHTML ="JavaScript is Cool";
       }
-      document.getElementById("jsIsCool").addEventListener("click",listener1);
+      var jsIsCool = document.getElementById("jsIsCool");
+      jsIsCool.addEventListener("click",listener1);
 
-
+        var remove1 = function (event) {
+          jsIsCool.removeEventListener("click",listener1);
+        }
+        var rL1 = document.getElementById("rL1");
+        rL1.addEventListener("click", remove1);
 
       // TODO: Uncomment the next line and get the sub header element by id
       var subHeader = document.getElementById("sub-header");
+
       // TODO: Set the text color of subHeader to blue
       var listener2 = function (event) {
         subHeader.style.color="blue";
       }
-      document.getElementById("setBlue").addEventListener("click", listener2);
 
+      var setBlue = document.getElementById("setBlue");
+      setBlue.addEventListener("click",listener2);
+
+      var remove2 = function (event) {
+        setBlue.removeEventListener("click",listener2);
+      }
+      var rL2 = document.getElementById("rL2");
+      rL2.addEventListener("click",remove2);
 
       // TODO: Uncomment the next line and get all list items
       var listItems = document.getElementsByTagName("li");
@@ -110,8 +122,6 @@
         subParagraphs[0].innerHTML = "Mission Accomplished!";
       }
       document.getElementById("missionA").addEventListener("click", listener5);
-
-
 
     })();
   </script>

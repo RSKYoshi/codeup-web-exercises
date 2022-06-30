@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,76 +6,119 @@
 </head>
 <body>
 
-<h1 id="main-header">Hello World!</h1>
-<ul>
-  <li data-dbid="1">Item 1</li>
-  <li data-dbid="2">Item 2</li>
-  <li data-dbid="3">Item 3</li>
-  <li data-dbid="4">Item 4</li>
-  <li data-dbid="5">Item 5</li>
-</ul>
-<h2 id="sub-header">Hello Again.</h2>
-<p class="sub-paragraph">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquip ex ea commodo consequat. Duis aute irure dolor in
-  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-  culpa qui officia deserunt mollit anim id est laborum.
-</p>
+  <h1 id="main-header">Hello World!</h1>
+  <ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+  </ul>
+  <h2 id="sub-header">Hello Again.</h2>
+  <p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <button id="jsIsCool">Change Main Header</button>
+  <button id="setBlue">Turn Sub-header Blue</button>
+  <button id="evenGrey">Turn even list items grey</button>
+  <p>
+  <button id="dbidBlue">dbid"1" blue</button>
+  <button id="missionA">Mission Accomplished!</button>
+  <button id="rL1">Deactivate Main Header button</button>
 
-<script>
-  (function() {
+
+
+    <script>
     "use strict";
-    // TODO: Uncomment next line and get the main header element by id
-    var mainHeader = document.getElementById("main-header");
+    (function() {
+      "use strict";
+      // TODO: Uncomment next line and get the main header element by id
+      var mainHeader = document.getElementById("main-header");
 
-    // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-    mainHeader.innerHTML ="JavaScript is Cool";
-    // TODO: Uncomment the next line and get the sub header element by id
-    var subHeader = document.getElementById("sub-header");
-    // TODO: Set the text color of subHeader to blue
-    subHeader.style.color="blue";
-    // TODO: Uncomment the next line and get all list items
-    var listItems = document.getElementsByTagName("li");
-    console.log(listItems)
-    // TODO: Set text color on every other list item to grey
-    for(var i = 0; i < listItems.length; i++){
-      if(i % 2 === 0){
-        listItems[i].style.color="grey";
+
+
+      // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+      var listener1 = function (event) {
+        mainHeader.innerHTML ="JavaScript is Cool";
       }
-    }
+      document.getElementById("jsIsCool").addEventListener("click",listener1);
 
-    // for(var i = 0; i < listItems.length; i+=2 ){
-    //
-    //     listItems[i].style.color="grey";
-    //
-    // }
-    // TODO: Set text color of li with dbid = 1 to blue
 
-    // for(var i = 0; i < listItems.length; i++){
-    //   if(i === 0){
-    //     listItems[i].style.color="blue";
-    //   }
-    // }
 
-    for (var i = 0; i < listItems.length; i++) {
-      var dbId = listItems[i].getAttribute("data-dbid");
-      if(dbId == 5) {
-        listItems[i].style.color = "blue";
-      } else{ console.log(i);}
-    }
+      // TODO: Uncomment the next line and get the sub header element by id
+      var subHeader = document.getElementById("sub-header");
+      // TODO: Set the text color of subHeader to blue
+      var listener2 = function (event) {
+        subHeader.style.color="blue";
+      }
+      document.getElementById("setBlue").addEventListener("click", listener2);
 
-    // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-    var subParagraphs = document.getElementsByClassName("sub-paragraph");
-    console.log(subParagraphs);
 
-    // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+      // TODO: Uncomment the next line and get all list items
+      var listItems = document.getElementsByTagName("li");
+      console.log(listItems)
+      // TODO: Set text color on every other list item to grey
+      var listener3 = function (event) {
+        for(var i = 0; i < listItems.length; i++){
+          if(i % 2 === 0){
+            listItems[i].style.color="grey";
+          }
+        }
+      }
+      document.getElementById("evenGrey").addEventListener("click", listener3);
 
-    subParagraphs[0].innerHTML = "Mission Accomplished!";
 
-  })();
-</script>
+      // for(var i = 0; i < listItems.length; i+=2 ){
+      //
+      //     listItems[i].style.color="grey";
+      //
+      // }
+      //
+      // TODO: Set text color of li with dbid = 1 to blue
+      //
+      // for(var i = 0; i < listItems.length; i++){
+      //   if(i === 0){
+      //     listItems[i].style.color="blue";
+      //   }
+      // }
+
+      var listener4 = function (event){
+        for (var i = 0; i < listItems.length; i++) {
+          var dbId = listItems[i].getAttribute("data-dbid");
+          if(dbId == 1) {
+            listItems[i].style.color = "blue";
+          } else{ console.log(i);}
+        }
+      };
+      document.getElementById("dbidBlue").addEventListener("click", listener4);
+
+
+
+      // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+      var subParagraphs = document.getElementsByClassName("sub-paragraph");
+      console.log(subParagraphs);
+
+      // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+      var listener5 = function (event) {
+        subParagraphs[0].innerHTML = "Mission Accomplished!";
+      }
+      document.getElementById("missionA").addEventListener("click", listener5);
+
+
+
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
+

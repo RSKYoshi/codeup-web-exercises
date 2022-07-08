@@ -1,0 +1,59 @@
+.invisible {
+    visibility: hidden;
+}
+.tglYLW {
+    background-color: yellow;
+}
+.turnB {
+    color: blue;
+}
+div {
+    background-color: rgba(65, 29, 29, 0.62);
+    border-radius: 3px;
+    border-width: 30px;
+    border: black;
+}
+#fp {
+    width: 30%;
+    height: 30vh;
+    margin-left: 2rem;
+    margin-bottom: 7rem;
+    float: right;
+    border-radius: 1rem;
+    border: 5px solid burlywood;
+    box-shadow: -10px 10px 10px black;
+
+}
+#sp {
+    width: 30%;
+    height: 30vh;
+    margin-left: 2rem;
+    margin-bottom: 7rem;
+    float: right;
+    border-radius: 1rem;
+    border: 5px solid burlywood;
+    box-shadow: -10px 10px 10px black;
+}
+#tp {
+    width: 30%;
+    height: 30vh;
+    margin-left: 2rem;
+    margin-bottom: 7rem;
+    float: right;
+    border-radius: 1rem;
+    border: 5px solid burlywood;
+    box-shadow: -10px 10px 10px black;
+}
+
+#f1 {
+    width: 29.7vw;
+    height: 30vh;
+}
+#f2 {
+    width: 29.7vw;
+    height: 30vh;
+}
+#f3{
+    width: 29.7vw;
+    height: 30vh;
+}

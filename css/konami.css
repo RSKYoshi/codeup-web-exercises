@@ -28,12 +28,10 @@
     display: block;
 }
 #logo {
-    margin-left: 10%;
+    margin-left: 11%;
     border-width: 3rem;
     border-radius: 30px;
-    box-shadow: 0px 0px 7px 7px black;
-    blur-radius:
-    spread-radius:
+    box-shadow: 0 0 7px 7px black;
 }
 /*#logo {*/
 /*    border-width: 3rem;*/

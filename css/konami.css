@@ -3,15 +3,15 @@
     -moz-animation: spin-horizontal .8s infinite linear;
     -o-animation: spin-horizontal .8s infinite linear;
     -webkit-animation: spin-horizontal .8s infinite linear;
-    animation: spin-horizontal 3s infinite linear;
+    animation: spin-horizontal 5s infinite linear;
 }
 @keyframes spin-horizontal {
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
 #body {
-    background-image: url(../img/froggerGif.gif);
-    background-size: cover;
+    background-image: url(../img/konami-start.gif);
+    background-size: 105rem 971px;
 }
 #title {
     background-image: url(../img/Konami1986.png);
@@ -28,7 +28,15 @@
     display: block;
 }
 #logo {
+    margin-left: 10%;
     border-width: 3rem;
     border-radius: 30px;
-    box-shadow: 5px 5px 12px 0 black;
+    box-shadow: 0px 0px 7px 7px black;
+    blur-radius:
+    spread-radius:
 }
+/*#logo {*/
+/*    border-width: 3rem;*/
+/*    border-radius: 30px;*/
+/*    box-shadow: 5px 5px 12px 0 black;*/
+/*}*/

@@ -27,7 +27,6 @@
         <button class="delete-todo">Delete Todo</button>
       </div>
     </div>
-
   </div>
 
   <hr>
@@ -55,18 +54,44 @@
   (function() {
     document.addEventListener("DOMContentLoaded", function () {
       // add your code here
+
+      let addBtn = document.getElementById("add-todo");
+      addBtn.addEventListener("click", addTodo);
+
       function addTodo() {
-        let addBtn = document.getElementById("add-todo");
-        addBtn.addEventListener("click", function(){
+          let atInput = document.getElementById("add-todo-text");
+          let uI = atInput.value;
+          let btn = document.createElement("button")
+          btn.innerHTML = "Delete Todo";
+          let cardFooter = document.createElement("div");
+          cardFooter.className = "card-footer delete-todo";
+          cardFooter.appendChild(btn);
 
-        })
+          const card = document.createElement("div");
+          card.className+="card col delete-todo";
 
-
+          const body = document.createElement("div");
+          body.innerText = uI;
+          body.className = "card-body";
+          card.appendChild(body);
+          card.appendChild(cardFooter);
+          document.getElementById("my-todos").appendChild(card);
+      }
+    //this is to delete
+      function addDEListeners(){
+        const allDeleteButtons = document.querySelectorAll(".delete-todo");
+        for (var i = 0; i < allDeleteButtons.length; i++){
+          allDeleteButtons[i].addEventListener("click", deleteTodo);
+        }
       }
 
-      function deleteTodo(event) {
-
+      function deleteTodo(){
+        console.log("delete something")
+        this.remove();
       }
+
+      addDEListeners();
+
 
     });
   })();

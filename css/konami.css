@@ -1,8 +1,8 @@
 
 .rotate{
-    -moz-animation: spin-horizontal .8s infinite linear;
-    -o-animation: spin-horizontal .8s infinite linear;
-    -webkit-animation: spin-horizontal .8s infinite linear;
+    -moz-animation: spin-horizontal 5s infinite linear;
+    -o-animation: spin-horizontal 5s infinite linear;
+    -webkit-animation: spin-horizontal 5s infinite linear;
     animation: spin-horizontal 5s infinite linear;
 }
 @keyframes spin-horizontal {

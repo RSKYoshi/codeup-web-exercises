@@ -5,6 +5,9 @@
     <title>DOM Exam Practice</title>
 
     <style>
+        .no-border {
+            border: green;
+        }
         .hotpinkText {
             color: hotpink;
         }
@@ -32,7 +35,7 @@
 
 <br>
 
-<a id="a1-3" href="https://www.google.com">Click for Google</a>
+<a id="a1-3" target="_blank" href="https://www.google.com">Click for Google</a>
 
 <br>
 <button id="b5">Click to change h1 text to hot pink</button>
@@ -114,8 +117,11 @@
             //      you could also add or toggle the class "red-border"
 
             const p6 = document.getElementById("p6");
-            p6.addEventListener("mouseenter", function (){
-              p6.color.style
+            p6.addEventListener("mouseenter", function (event){
+              p6.classList.toggle("red-border");
+            })
+            p6.addEventListener("mouseleave", function (event){
+                p6.classList.replace("red-border", "no-border");
             })
 
 

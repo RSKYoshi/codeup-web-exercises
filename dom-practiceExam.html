@@ -125,12 +125,28 @@
             })
 
 
-            // problem 7: when the user types in the text input with id "input7"
+            // problem 7: when the user types in the text input with id "input7" or "text7"?
             // , copy what was typed into the paragraph with id p7
             // 1. get a reference to the text field with id input7
             // 2. add a key event listener to the text field
             // 3. inside the event listener, get a reference to the paragraph p7
             // 4. set the paragraph's text to the input's VALUE property
+
+            const i7 = document.getElementById("text7");
+            i7.addEventListener("keyup", function(){
+                let p7 = document.getElementById("p7");
+                //add input text to p7 empty string here
+                console.log(p7.innerText = document.getElementById("text7").value);
+            })
+
+            //this gets only one value of the letter
+            // const i7 = document.getElementById("text7");
+            // i7.addEventListener("keypress", function(){
+            //     let userInput = ""
+            //     let p7 = document.getElementById("p7");
+            //     userInput+=event.key;
+            //     p7.innerText=userInput;
+            // })
 
 
 

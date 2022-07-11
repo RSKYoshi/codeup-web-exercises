@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Exam Practice</title>
-
     <style>
         .no-border {
             border: green;
@@ -11,19 +10,15 @@
         .hotpinkText {
             color: hotpink;
         }
-
         .red-border {
             border: 5px solid red;
         }
-
         .big-font {
             font-size: 2em;
         }
-
         .blue-text {
             color: blue;
         }
-
     </style>
 </head>
 <body>
@@ -59,10 +54,10 @@
             // 2. change its text using
 
             let h1 = document.getElementById("h1-1");
-            const h1toHW = function (event) {
+            // const h1toHW = function (event) {
                 h1.innerHTML = "Hello World!";
-            }
-            h1toHW();
+            // }
+            // h1toHW();
 
 
             // problem #2
@@ -103,8 +98,16 @@
             // 1. get a reference to the body
             // 2. set backgroundColor property of its style property to "green"
 
+
             const b = document.getElementsByTagName("body");
-            b[0].style.backgroundColor = "green";
+            b[0].style.backgroundColor = "white";
+            b[0].addEventListener("click", function(){
+                if(b[0].style.backgroundColor === "navajowhite"){
+                    b[0].style.backgroundColor = "";
+                } else {
+                    b[0].style.backgroundColor = "navajowhite";
+                }
+            });
 
 
             // problem #5
@@ -136,10 +139,9 @@
                 p6.classList.replace("red-border", "no-border");
             })
 
-
-            // problem 7: when the user types in the text input with id "input7" or "text7"?
+            // problem 7: when the user types in the text input with id "text7"?
             // , copy what was typed into the paragraph with id p7
-            // 1. get a reference to the text field with id input7
+            // 1. get a reference to the text field with id text7
             // 2. add a key event listener to the text field
             // 3. inside the event listener, get a reference to the paragraph p7
             // 4. set the paragraph's text to the input's VALUE property
@@ -148,12 +150,12 @@
             i7.addEventListener("keyup", function(){
                 let p7 = document.getElementById("p7");
                 //add input text to p7 empty string here
-                console.log(p7.innerText = document.getElementById("text7").value);
+                p7.innerText = document.getElementById("text7").value;
             })
 
-            //this gets only one value of the letter
+            // this gets only one value of the letter
             // const i7 = document.getElementById("text7");
-            // i7.addEventListener("keypress", function(){
+            // i7.addEventListener("keyup", function(){
             //     let userInput = ""
             //     let p7 = document.getElementById("p7");
             //     userInput+=event.key;

@@ -72,11 +72,23 @@
             // 2. in the anonymous function, get a variable for the p with id p1-2
             // 3. set the p's innerText
 
+            // problem #2 non-toggle method
+            // const lb1 = document.getElementById("b1-2");
+            // lb1.addEventListener("click", function (){
+            //     let changep1 = document.getElementById("p1-2")
+            //     changep1.innerText= "The quick brown fox jumped over the lazy dog";
+            // })
+
+            //problem #2 toggle method
             const lb1 = document.getElementById("b1-2");
             lb1.addEventListener("click", function (){
                 let changep1 = document.getElementById("p1-2")
-                changep1.innerText = "The quick brown fox jumped over the lazy dog"
+                if(changep1.innerText === "This is a paragraph") {
+                    changep1.innerText = "The quick brown fox jumped over the lazy dog";
+                } else {changep1.innerText = "This is a paragraph";
+                }
             })
+
 
             // problem #3
             // change the anchor with id a1-3's href to "https://java.codeup.com"
@@ -147,9 +159,6 @@
             //     userInput+=event.key;
             //     p7.innerText=userInput;
             // })
-
-
-
         });
 
     })();

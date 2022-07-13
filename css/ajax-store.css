@@ -1,0 +1,23 @@
+.table {
+    background: papayawhip;
+}
+
+body.table {
+}
+.h1 {
+    border: 5px black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 1rem;
+    width: 22rem;
+    text-align: center;
+}
+#products {
+    border: 5px black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    overflow: scroll;
+}
+
+
+

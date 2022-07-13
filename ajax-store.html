@@ -11,6 +11,7 @@
 <nav><h1 class= "text-white lb" id="h1" style="background: #ff0000">YGS</h1></nav>
 
 <table class="products" id="products">
+<!--  //use this in table tags, while disabling bootstrap style="display: block";-->
   <thead id="tH">
   <tr>
     <th>Title</th>
@@ -24,7 +25,6 @@
 <button id="lb">Refresh List</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
 <script>
   (async function () {
     "use strict";
@@ -42,13 +42,45 @@
     // })
 
 
+    // boilerplate code here for pulling JSON data
+    // async function pullJSON() {
+    //   await fetch("data/inventory.json")
+    //           .then(function (response) {
+    //             // console.log("fetch finished!")
+    //             if (response.status !== 200) {
+    //               console.log("please wait");
+    //               return [];
+    //             } else {
+    //               return response.json();
+    //             }
+    //           }).then(function (data) {
+    //                 //execute code here to pull data...
+    //           });
+    // }
+
+//this is how to do a for loop to pull JSON data....goes here:
+// .then(function (data) { let output = document.getElementById("insertProducts");
+//     for (let i = 0; i < data.length; i++) {
+//       let tool = data[i]
+//       let newRow = "<tr>" +
+//               "<td>" + tool.title + "</td>" +
+//               "<td>" + tool.quantity + "</td>" +
+//               "<td>" + tool.price + "</td>" +
+//               "<td>" + tool.categories + "</td>" +
+//               "</tr>"
+//       output.innerHTML += (newRow)
+//     }
+//   }
+
+
 
     async function pullJSON() {
       await fetch("data/inventory.json")
               .then(function (response) {
                 // console.log("fetch finished!")
                 if (response.status !== 200) {
-                  console.log("please wait")
+                  console.log("please wait");
+                  return [];
                 } else {
                   return response.json();
                 }

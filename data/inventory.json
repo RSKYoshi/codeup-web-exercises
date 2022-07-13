@@ -48,5 +48,14 @@
         "BBQ"
     ],
     "price": "$57/lb."
+}, {
+    "title": "new foods",
+    "quantity": 7,
+    "categories": [
+        "food",
+        "beef",
+        "BBQ"
+    ],
+    "price": "$57/lb."
 }
 ]

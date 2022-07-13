@@ -40,7 +40,10 @@
     //     ("insertProducts").append(title, quantity, categories, price)
     //   })
     // })
-    async function refresh() {
+
+
+
+    async function pullJSON() {
       await fetch("data/inventory.json")
               .then(function (response) {
                 // console.log("fetch finished!")
@@ -50,9 +53,6 @@
                   return response.json();
                 }
               }).then(function (data) {
-
-                //use a for loop and loop through data, appending to the "insertProducts" id.
-
                 let output = document.getElementById("insertProducts");
                 for (let i = 0; i < data.length; i++) {
                   let tool = data[i]
@@ -66,9 +66,10 @@
                 }
               });
     }
+    await pullJSON();
     // await refresh();
 
-    async function clean() {
+    async function refresh() {
       await fetch("data/inventory.json")
               .then(function (response) {
                 // console.log("fetch finished!")
@@ -78,22 +79,25 @@
                   return response.json();
                 }
               }).then(function (data) {
-                // data.filter((thing, index, self) => index === self.findIndex((t) => (
-                //                 t.title === thing.title && t.quantity === thing.quantity && t.price === thing.price && t.categories === thing.categories
-                //         ))
-                // )
-                data.filter((obj, pos, arr) => {
-                  return arr
-                          .map(mapObj => mapObj.name)
-                          .indexOf(obj.name) == pos;
-                });
-              })
+                let output = document.getElementById("insertProducts");
+                for (let i = 0; i < data.length; i++) {
+                  let tool = data[i]
+                  let newRow = "<tr>" +
+                          "<td>" + tool.title + "</td>" +
+                          "<td>" + tool.quantity + "</td>" +
+                          "<td>" + tool.price + "</td>" +
+                          "<td>" + tool.categories + "</td>" +
+                          "</tr>"
+
+                  output.innerHTML = "";
+                }
+              });
     }
 
     let refreshBtn = document.getElementById("lb");
     refreshBtn.addEventListener("click", function(){
       refresh();
-      clean();
+      pullJSON();
     })
 
 

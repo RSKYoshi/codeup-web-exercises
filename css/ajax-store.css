@@ -11,6 +11,11 @@
 }
 body.table {
 }
+tbody{
+    border-style: solid;
+    border-color: grey;
+    height: 10px;
+}
 .h1 {
     border: black;
     border-radius: 20px;
@@ -53,12 +58,13 @@ body.table {
     background-color: white;
 }
 #products {
-    border: 5px black;
+    border: 3px solid black;
     border-radius: 5px;
-    overflow: scroll;
+    /*overflow-y: scroll;*/
     width: 50%;
-    height: 50%;
+    height: 10px;
     background-color: white;
+    margin: 5px
 }
 #products:hover {
     transform: translate(0, -2px);
@@ -66,7 +72,7 @@ body.table {
     transition: 50ms ease;
 }
 #insertProducts {
-    /*float: left;*/
+    overflow-y: scroll;
 }
 #tH {
     /*float: left;*/
@@ -76,5 +82,11 @@ body.table {
     align-items: center;
     /*justify-content: center;*/
     margin-top: 15vh;
+    width: 80%;
+    max-height: 50px;
+    overflow: scroll;
 }
 
+#html {
+    padding: 17rem;
+}

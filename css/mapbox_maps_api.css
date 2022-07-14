@@ -1,0 +1,21 @@
+
+#yoshiPng {
+    transform: scale(0.7, 1.5);
+    height: 5vh;
+    width: 5vw;
+    margin-right: 0;
+}
+
+.badge {
+    border-radius: 8.25rem;
+    box-shadow: black 0 0 5px;
+    margin-top: 3vh;
+    margin-left: 1vw;
+}
+
+.zBtns {
+    margin-left: 3vw;
+}
+#body {
+    background: rgba(171, 167, 171, 0.73);
+}

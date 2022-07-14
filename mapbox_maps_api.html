@@ -74,13 +74,53 @@
     })
 
     //adds marker to favorite restaurant
-    let markerFavR = new mapboxgl.Marker().setLngLat([-158.0783, 21.3397]).addTo(map);
-    let sushiBayPopup = new mapboxgl.Popup().setHTML("<p>Sushi Bay--conveyor belt served premium sushi in a cozy atmosphere</p>")
-    markerFavR.setPopup(sushiBayPopup);
+    //add a total of 3 markers for the 3 restaurants
+
+    const mG = new mapboxgl.Marker().setLngLat([-157.95415064944538, 21.388018151627197]).addTo(map);
+    let gyotakuPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for gyotaku </p>");
+    mG.setPopup(gyotakuPopup);
+
+    const mSB = new mapboxgl.Marker().setLngLat([-158.0783, 21.339943254196204]).addTo(map);
+    let sushiBayPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for sushi bay </p>");
+    mSB.setPopup(sushiBayPopup);
+
+    const mZ = new mapboxgl.Marker().setLngLat([-158.08197427369848, 21.334692186725366]).addTo(map);
+    let zippysPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for zippys </p>");
+    mZ.setPopup(zippysPopup);
+
+
 
     let restaurants = [{
+        "location": "21.388018151627197, -157.95415064944538",
+        "name": "Gyotaku",
+        "type": "Japanese",
+        "cost": "$$"
+    }, {
+        "location": "1.339943254196204, -158.07830353137032",
+        "name": "Sushi-Bay",
+        "type": "Japanese",
+        "cost": "$$"
+    }, {
+        "location": "21.334692186725366, -158.08197427369848",
+        "name": "Zippy's",
+        "type": "Hawaiian/mixed plate",
+        "cost": "$"
+    }
+    ]
 
-    }]
+    let
+
+    function getMarkerForLocation (){
+
+    }
+
+    restaurants.forEach(function (restaurant){
+        //assign each restaurant to let using object destructuring , then use ${} in the <p><p> to add to popup.
+        //or assign restaurant to popup here...and then also attach a marker to each restaurant here somehow...
+        const marker = getMarkerForLocation(restaurant);
+        marker.addTo(map);
+    })
+
 
 
     //to grab user value in the input button and search location

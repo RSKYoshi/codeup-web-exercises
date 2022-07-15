@@ -25,20 +25,32 @@
         }
     </style>
 </head>
-<body id="body">
+<body id="table" class="body">
 
 <h1><span class = "bg-primary text-decoration-underline badge"><img id="yoshiPng" src="img/yoshi-icon.png" alt="img">Yoshi's Maps</span> </h1>
-<hr>
+
 
     <input id="searchInput" placeholder="search under construction" class="m-2 col-3">
     <button id="searchBtn">Search</button>
 
-
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 <hr>
-<button class="zBtns" id="zoomInBtn">+</button>
-<button class="zBtns" id="zoomOutBtn">-</button>
+<button class="zBtns" id="zoomInBtn"> &nbsp;+&nbsp; </button>
+<button class="zBtns" id="zoomOutBtn"> &nbsp;-&nbsp;</button>
+<button class="zBtns badge bg-success" id="dropYM">Drop Yoshi's Fav restaurants</button>
+<button class="zBtns badge bg-success" id="hideYM">Hide Yoshi's Fav restaurants</button>
+
+<label id="zoomSelectText">
+    Adjust zoom units
+    <select id="dropdownZooms">
+        <option id="x1">x1</option>
+        <option id="x5">x5</option>
+        <option id="x10">x10</option>
+        <option id="x15">x15</option>
+    </select>
+</label>
+
 
 <!-- Mapbox JS -->
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
@@ -50,77 +62,189 @@
     mapboxgl.accessToken = mapBoxApiKey;
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: "mapbox://styles/ryansei/cl5lh63ns004n14t11wdvfnqy",
+        // 'mapbox://styles/mapbox/streets-v11',
         zoom: 11,
         center: [-158.0824,21.3337]
     });
+    //click on img
+    function rotate(element, rotation = 90) {
+        element.style.transform = 'rotate(' + rotation + 'deg)';
+    }
+    function clickToR(){
+        document.querySelector('#yoshiPng').addEventListener('click', function() {
+            rotate(this,180);
+        });
+    };
+    clickToR();
 
-    const zoomIn = document.getElementById("zoomInBtn");
-    zoomIn.addEventListener("click", function(){
-        //getZoom
+//everytime I hover on the body element
+    let table = document.getElementById("table");
+    table.addEventListener("mouseenter", function() {
+        //toggle the body element to turn dark
+        let body = document.getElementById("table");
+        body.classList.toggle("light-box");
+    })
+
+    table.addEventListener("mouseleave", function() {
+        let body = document.getElementById("table");
+        body.classList.toggle("light-box");
+    })
+
+
+
+        //zoom in btn x1
+    const zoomIn1 = document.getElementById("zoomInBtn");
+    zoomIn1.addEventListener("click", function(){
         let zoomIn = map.getZoom();
-        //the increment below specifies increment by 5 (unit of measurement is determined by mapbox)
+        // uncomment to change increment below: specifies increment by 5 (unit of measurement is determined by mapbox)
         // zoomIn+=5
         zoomIn++
         map.setZoom(zoomIn);
     })
-
-    //zoom btn
-    const zoomOut = document.getElementById("zoomOutBtn");
-    zoomOut.addEventListener("click", function (){
+    // zoom out btn x1
+    const zoomOut1 = document.getElementById("zoomOutBtn");
+    zoomOut1.addEventListener("click", function (){
         let zoomOut = map.getZoom();
+        // uncomment to change decrement below: specifies decrement by 5 (unit of measurement is determined by mapbox)
+        // zoomOut-=5
         zoomOut--
         map.setZoom(zoomOut);
     })
 
-    //adds marker to favorite restaurant
-    //add a total of 3 markers for the 3 restaurants
 
-    const mG = new mapboxgl.Marker().setLngLat([-157.95415064944538, 21.388018151627197]).addTo(map);
-    let gyotakuPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for gyotaku </p>");
-    mG.setPopup(gyotakuPopup);
 
-    const mSB = new mapboxgl.Marker().setLngLat([-158.0783, 21.339943254196204]).addTo(map);
-    let sushiBayPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for sushi bay </p>");
-    mSB.setPopup(sushiBayPopup);
+    //drop markers btn
+    let dMBtn = document.getElementById("dropYM");
+    dMBtn.addEventListener("click", function(){
+        markersCreatedByYoshi();
+    })
+    //hide marker btn is below const: markersCreatedByYoshi
 
-    const mZ = new mapboxgl.Marker().setLngLat([-158.08197427369848, 21.334692186725366]).addTo(map);
-    let zippysPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for zippys </p>");
-    mZ.setPopup(zippysPopup);
 
+    //select x5 zoom
+    let selectZoomx1 = document.getElementById("dropdownZooms");
+    selectZoomx1.addEventListener("input", function(){
+
+
+            const zoomIn5 = document.getElementById("x5");
+            zoomIn5.addEventListener("change", function () {
+                let zoomIn = map.getZoom();
+                // uncomment to change increment below: specifies increment by 5 (unit of measurement is determined by mapbox)
+                zoomIn += 5
+                map.setZoom(zoomIn);
+            })
+            // zoom out btn
+            const zoomOut5 = document.getElementById("x5");
+            zoomOut5.addEventListener("change", function () {
+                let zoomOut = map.getZoom();
+                // uncomment to change decrement below: specifies decrement by 5 (unit of measurement is determined by mapbox)
+                zoomOut -= 5
+                map.setZoom(zoomOut);
+            })
+
+
+    });
+
+
+
+
+    // const zoomx5 =
+    // const zoomx10 =
+    // const xoomx15 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //these are working markers and popups, outside any loop
+    // const mG = new mapboxgl.Marker().setLngLat([-157.95415064944538, 21.388018151627197]).addTo(map);
+    // let gyotakuPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for gyotaku </p>");
+    // mG.setPopup(gyotakuPopup);
+    //
+    // const mSB = new mapboxgl.Marker().setLngLat([-158.0783, 21.339943254196204]).addTo(map);
+    // let sushiBayPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for sushi bay </p>");
+    // mSB.setPopup(sushiBayPopup);
+    //
+    // const mZ = new mapboxgl.Marker().setLngLat([-158.08197427369848, 21.334692186725366]).addTo(map);
+    // let zippysPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for zippys </p>");
+    // mZ.setPopup(zippysPopup);
 
 
     let restaurants = [{
-        "location": "21.388018151627197, -157.95415064944538",
-        "name": "Gyotaku",
-        "type": "Japanese",
-        "cost": "$$"
+        LngLat: [ -157.95415064944538, 21.388018151627197],
+        name: "<h1>Gyotaku <hr></h1>",
+        type: "Japanese <hr>",
+        cost: "price level: $$",
+        src: "<img src='img/gyotaku-logo.png' alt='img'>"
     }, {
-        "location": "1.339943254196204, -158.07830353137032",
-        "name": "Sushi-Bay",
-        "type": "Japanese",
-        "cost": "$$"
+        LngLat: [-158.07830353137032, 21.339943254196204],
+        name: "<h1>Sushi-Bay <hr> </h1>",
+        type: "Japanese <hr>",
+        cost: "price level: $$",
+        src: "<img src='img/sushi-bay-logo.png' alt='img'>"
     }, {
-        "location": "21.334692186725366, -158.08197427369848",
-        "name": "Zippy's",
-        "type": "Hawaiian/mixed plate",
-        "cost": "$"
+        LngLat: [-157.8775, 21.3175],
+        name: "<h1>Nico's Pier 38 <hr> </h1>",
+        type: "Hawaiian/seafood <hr>",
+        cost: "price level: $$$",
+        src: "<img src='img/magnifying-glass-solid.svg' alt='img'>"
+    },
+        {
+        LngLat: [-158.08197427369848, 21.334692186725366],
+        name: "<h1>Zippy's <hr> </h1>",
+        type: "Hawaiian/mixed plate <hr>",
+        cost: "price level: $",
+        src: "<img src='img/magnifying-glass-solid.svg' alt='img'>"
     }
     ]
 
-    let
 
-    function getMarkerForLocation (){
 
-    }
-
-    restaurants.forEach(function (restaurant){
-        //assign each restaurant to let using object destructuring , then use ${} in the <p><p> to add to popup.
-        //or assign restaurant to popup here...and then also attach a marker to each restaurant here somehow...
-        const marker = getMarkerForLocation(restaurant);
-        marker.addTo(map);
+    const markersCreatedByYoshi =
+        function yMarkers() {
+        restaurants.forEach(function (restaurant) {
+            //assign each restaurant to let using object destructuring , then use ${} in the <p><p> to add to popup.
+            //or assign restaurant to popup here...and then also attach a marker to each restaurant here somehow...
+            //restaurant data to turn into markers and popups
+            const newMarker = new mapboxgl.Marker().setLngLat(restaurant.LngLat).addTo(map);
+            const popUp = new mapboxgl.Popup().setHTML(`<p> ${restaurant.src} ${restaurant.name} ${restaurant.type} ${restaurant.cost} </p>`);
+            newMarker.setPopup(popUp);
+        });
+    };
+//to delete markers created by const markersCreatedByYoshi:
+    let yoshisMarkerArray = [markersCreatedByYoshi]
+    let hMBtn = document.getElementById("hideYM");
+    hMBtn.addEventListener("click", function(){
+        for(let i=0;i<yoshisMarkerArray.length;i++){
+            map.remove();
+        }
     })
-
+    console.log(yoshisMarkerArray);
 
 
     //to grab user value in the input button and search location
@@ -129,13 +253,6 @@
     //     let input = document.getElementById("searchInput");
     //       geocode(input.value);
     //     });
-
-
-
-
-
-
-
 
 </script>
 </body>

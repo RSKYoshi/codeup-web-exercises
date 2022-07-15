@@ -72,8 +72,6 @@
 //     }
 //   }
 
-
-
     async function pullJSON() {
       await fetch("data/inventory.json")
               .then(function (response) {
@@ -120,7 +118,6 @@
                           "<td>" + tool.price + "</td>" +
                           "<td>" + tool.categories + "</td>" +
                           "</tr>"
-
                   output.innerHTML = "";
                 }
               });
@@ -132,17 +129,16 @@
       pullJSON();
     })
 
-
     let table = document.getElementById("table");
     table.addEventListener("mouseenter", function() {
       let body = document.getElementById("table");
       body.classList.toggle("light-box");
-    })
+    });
 
     table.addEventListener("mouseleave", function() {
       let body = document.getElementById("table");
       body.classList.toggle("light-box");
-    })
+    });
 
     // function showLB(){
     //   let tlB = document.getElementById("LB")

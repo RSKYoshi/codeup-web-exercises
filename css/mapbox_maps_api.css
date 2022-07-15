@@ -5,7 +5,26 @@
     width: 5vw;
     margin-right: 0;
 }
-
+#yoshiPng:hover {
+    /*animation: spin-horizontal 7s infinite linear;*/
+    transition: .7s;
+    transform: rotate(360deg);
+}
+#zoomSelectText {
+    color: white;
+}
+@keyframes spin-horizontal {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+.img {
+    transform: scale(0.8, 1);
+    overflow: scroll;
+    object-fit: cover;
+}
+.mapboxgl-popup-content {
+    align-content: center;
+}
 .badge {
     border-radius: 8.25rem;
     box-shadow: black 0 0 5px;
@@ -16,6 +35,13 @@
 .zBtns {
     margin-left: 3vw;
 }
-#body {
+.body {
     background: rgba(171, 167, 171, 0.73);
+}
+
+.light-box{
+    background-color: #252525;
+}
+:root {
+    --clr-neon: hsl(317 100% 54%);
 }

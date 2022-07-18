@@ -27,7 +27,7 @@
 }
 /*this is to toggle the yoshi markers hidden */
 .mapboxgl-marker {
-    display: none;
+    /*display: none;*/
 }
 .badge {
     border-radius: 8.25rem;

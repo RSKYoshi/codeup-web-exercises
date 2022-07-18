@@ -19,14 +19,14 @@
 
   <div id="my-todos" class="row">
 
-    <div class="card col-2">
-      <div class="card-body">
-        Example Todo
-      </div>
-      <div class="card-footer">
-        <button class="delete-todo">Delete Todo</button>
-      </div>
-    </div>
+<!--    <div class="card col-2 m-2" >-->
+<!--      <div class="card-body">-->
+<!--        Example Todo-->
+<!--      </div>-->
+<!--      <div class="card-footer">-->
+<!--        <button class="delete-todo">Delete Todo</button>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
   <hr>
@@ -59,36 +59,72 @@
       addBtn.addEventListener("click", addTodo);
 
       function addTodo() {
+        //this references the input box, grabs its value, and assigns the value of input box to uI as a let
           let atInput = document.getElementById("add-todo-text");
           let uI = atInput.value;
+          //this creates a delete button with the text 'Delete Todo'
           let btn = document.createElement("button")
           btn.innerHTML = "Delete Todo";
+          // creates a footer and appends delete button to the bottom of card
           let cardFooter = document.createElement("div");
           cardFooter.className = "card-footer delete-todo";
           cardFooter.appendChild(btn);
-
+          //this creates the new card everything is placed into
           const card = document.createElement("div");
+          //this is where instead of appending to one col, it creates a new col for each card
           card.className+="card col delete-todo";
-
+          //this creates a section on the new card with whatever was typed in the input
           const body = document.createElement("div");
+          //uI here is the value of the input box
           body.innerText = uI;
+          //gives each card a class of 'card-body'
           body.className = "card-body";
+          //card here is a new div, and I am appending a new div('body') under the last div('appendChild'), all in the same card
           card.appendChild(body);
+          //card here is a new div, and I am appending a new div('cardFooter') under the last div('appendChild'), all in the same card
           card.appendChild(cardFooter);
+          //this is the final step, adding the new card with all its info into the div in the body with the id='my-todos'
           document.getElementById("my-todos").appendChild(card);
-      }
-    //this is to delete
-      function addDEListeners(){
-        const allDeleteButtons = document.querySelectorAll(".delete-todo");
-        for (var i = 0; i < allDeleteButtons.length; i++){
-          allDeleteButtons[i].addEventListener("click", deleteTodo);
+
+
+        const allDeleteButtons = document.getElementsByClassName("card");
+        //this is to delete
+        function addDEListeners(){
+          for (let i = 0; i < allDeleteButtons.length; i++){
+            allDeleteButtons[i].addEventListener("click", deleteTodo);
+          }
         }
+        addDEListeners();
       }
+
+
+
       function deleteTodo(){
-        console.log("delete something")
-        this.remove();
+        // console.log("delete something")
+        //reference and then remove new card here
+        let cards = document.querySelector(".card")
+        // for(let i =0; i < cards.length; i++){
+        cards.closest("div.card").remove();
       }
-      addDEListeners();
+      // }
+
+
+
+
+
+//       const clickMeBtn = document.querySelectorAll("ul li button");
+// //the i ++ below will start at 0 in the array of buttons and <p>'s. array 0 button and array 0 <p> will be linked, and so forth until all are iterated over
+//       for (let i = 0; i < clickMeBtn.length; i++) {
+//         // loop over the array of buttons and add and event listener to each button
+//         clickMeBtn[i].addEventListener("click", function(event) {
+//           let p = document.querySelectorAll("ul li p")
+//           //selected all the 'Change Me' <p>'s and changed their text when corresponding btn is clicked
+//           p[i].innerText = "You changed me!"
+//         })
+//       }
+
+
+
     });
   })();
 </script>

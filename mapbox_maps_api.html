@@ -34,7 +34,12 @@
     <button id="searchBtn">Search</button>
 
 <!-- The HTML element that serves as the Mapbox container -->
-<div id='map'></div>
+<div id='map'>
+
+
+
+</div>
+
 <hr>
 <button class="zBtns" id="zoomInBtn"> &nbsp;+&nbsp; </button>
 <button class="zBtns" id="zoomOutBtn"> &nbsp;-&nbsp;</button>
@@ -91,6 +96,18 @@
         body.classList.toggle("light-box");
     })
 
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+// When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    );
+
 
 
         //zoom in btn x1
@@ -142,8 +159,6 @@
                 zoomOut -= 5
                 map.setZoom(zoomOut);
             })
-
-
     });
 
 
@@ -238,14 +253,18 @@
     };
 //to delete markers created by const markersCreatedByYoshi:
     //create new class upon clicking the hide button. new class will toggle "display none". Need to target .mapboxgl-marker
-    let yoshisMarkerArray = [markersCreatedByYoshi]
-    let hMBtn = document.getElementById("hideYM");
-    hMBtn.addEventListener("click", function(){
-        for(let i=0;i<yoshisMarkerArray.length;i++){
-            map.remove();
-        }
+
+
+    // let yoshisMarkerArray = [markersCreatedByYoshi]
+    let hideMBtn = document.getElementById("hideYM");
+    hideMBtn.addEventListener("click", function(){
+        let yoshisMarkers = document.getElementsByClassName("mapboxgl-marker");
+        yoshisMarkers.createElement
+
+    //     for(let i=0;i<yoshisMarkerArray.length;i++){
+    //         map.remove();
+    //     }
     })
-    console.log(yoshisMarkerArray);
 
 
     //to grab user value in the input button and search location

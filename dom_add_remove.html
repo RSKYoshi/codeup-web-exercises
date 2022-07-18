@@ -98,14 +98,18 @@
       }
 
 
-
-      function deleteTodo(){
+      function deleteTodo() {
+        //put parentElement.parentElement of th3 delete button here
+        // console.log("delete something")
+        // this.remove();
         // console.log("delete something")
         //reference and then remove new card here
-        let cards = document.querySelector(".card")
-        // for(let i =0; i < cards.length; i++){
-        cards.closest("div.card").remove();
+        let cards = document.querySelectorAll(".card")
+        for(let i =0; i < cards.length; i++){
+        cards[i].closest("div.card").remove();
       }
+      }
+      // }
       // }
 
 

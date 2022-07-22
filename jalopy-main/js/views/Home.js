@@ -3,7 +3,7 @@
 
 // const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 
-
+//HTML here?
 let jalopyImages = [
     {
         image: "assets/jalopy1.jpeg"
@@ -34,6 +34,7 @@ export default function Home(props) {
     `;
 }
 // Home();
+//js action here??
 export function HomeEvents() {
     let jalopyBtn = document.querySelector("#img-btn");
     jalopyBtn.addEventListener("click", function(){
@@ -43,5 +44,5 @@ export function HomeEvents() {
         if(jalopyArray1===3){
             jalopyArray1=0
         }
-    })
+    });
 }

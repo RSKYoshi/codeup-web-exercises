@@ -43,4 +43,9 @@ export default function aboutHTMLFunctions(props) {
 
 export function aboutJSFunctions() {
     showNotification("Hey, a message!", "danger");
+    let changeTextBtn = document.querySelector("#change-about-text")
+    changeTextBtn.addEventListener("click", function(){
+        let targetP = document.querySelector("#about-text");
+        targetP.innerText = "Hello world!"
+    })
 }

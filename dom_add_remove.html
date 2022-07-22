@@ -63,7 +63,8 @@
           let atInput = document.getElementById("add-todo-text");
           let uI = atInput.value;
           //this creates a delete button with the text 'Delete Todo'
-          let btn = document.createElement("button")
+          let btn = document.createElement("button");
+          btn.setAttribute("class","dltBtn");
           btn.innerHTML = "Delete Todo";
           // creates a footer and appends delete button to the bottom of card
           let cardFooter = document.createElement("div");
@@ -71,6 +72,7 @@
           cardFooter.appendChild(btn);
           //this creates the new card everything is placed into
           const card = document.createElement("div");
+          card.setAttribute("class","cardToDlt ");
           //this is where instead of appending to one col, it creates a new col for each card
           card.className+="card col delete-todo";
           //this creates a section on the new card with whatever was typed in the input
@@ -86,31 +88,72 @@
           //this is the final step, adding the new card with all its info into the div in the body with the id='my-todos'
           document.getElementById("my-todos").appendChild(card);
 
+        let dltBtns = document.querySelectorAll(".dltBtn");
 
-        const allDeleteButtons = document.getElementsByClassName("card");
-        //this is to delete
-        function addDEListeners(){
-          for (let i = 0; i < allDeleteButtons.length; i++){
-            allDeleteButtons[i].addEventListener("click", deleteTodo);
-          }
-        }
-        addDEListeners();
+        dltBtns.forEach(function(element){
+          element.addEventListener("click",function(event){
+            element.parentElement.parentElement.remove();
+          })
+
+        })
+
+
+        // for(let i =0;i<dltBtns.length;i++){
+          // dltBtns[i].addEventListener("click", function(){
+            // console.log('hello');
+            // for (let j = 0; j < dltBtns.length; j++) {
+            // dltBtns[i].addEventListener("click", function () {
+            // let cardToDlt= document.querySelector(".cardToDlt");
+            // cardToDlt[i].parentElement.parentElement.remove();
+            // cardToDlt[i].removeChild(cardToDlt[i]);
+            // });
+            // }
+          // });
+        // }
+
+
+
+      // let dltBtns = document.querySelectorAll(".dltBtn");
+      // for(let i =0;i<dltBtns.length;i++){
+      //   dltBtns[i].addEventListener("click", function(){
+      //     console.log('hello');
+      //     // for (let j = 0; j < dltBtns.length; j++) {
+      //       // dltBtns[i].addEventListener("click", function () {
+      //         let cardToDlt= document.querySelector(".cardToDlt");
+      //         cardToDlt[i].parentElement.parentElement.removeChild(cardToDlt[i].parentElement.parentElement);
+      //       // });
+      //     // }
+      //   });
       }
 
 
-      function deleteTodo() {
-        //put parentElement.parentElement of the delete button here
-        // console.log("delete something")
-        // this.remove();
-        // console.log("delete something")
-        //reference and then remove new card here
-        // let cards = document.querySelectorAll("div div div");
-        // for(let i =0; i < cards.length; i++){
-        // cards[i].closest("div.card").remove();
-        // cards[i].remove();
-          this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
 
-        }
+
+      //end of add to do function
+
+      // dltBtns.addEventListener("click", function () {
+      //   console.log("test");
+      // });
+
+
+
+
+      //
+      // function deleteTodo() {
+      //   put parentElement.parentElement of the delete button here
+      //   console.log("delete something")
+      //   this.remove();
+      //   console.log("delete something")
+      //   reference and then remove new card here
+      //   let cards = document.querySelectorAll("div div div");
+      //   for(let i =0; i < cards.length; i++){
+      //   cards[i].closest("div.card").remove();
+      //   cards[i].remove();
+      //
+
+
+
+        // }
       // }
       // }
       // }

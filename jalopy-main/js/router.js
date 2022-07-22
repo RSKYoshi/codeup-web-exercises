@@ -8,6 +8,8 @@ import Register from "./views/Register.js"
 import {RegisterEvent} from "./views/Register.js";
 import UserIndex, {UserEvents} from "./views/User.js";
 import Logout, {LogoutEvents} from "./views/Logout.js";
+import DogFactsView, {DogFactsEvents} from "./views/DogFacts.js";
+import QuotesEvents, {QuotesView} from "./views/views/Quotes.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -69,6 +71,20 @@ export default function router(URI) {
             state: {},
             uri: location.pathname,
             title: 'Loading...',
+        },
+        '/dogs': {
+                returnView: DogFactsView,
+                state: {},
+                uri: '/dogs',
+                title: 'Dog Facts',
+                viewEvent: DogFactsEvents
+            },
+        '/quotes': {
+            returnView: QuotesView,
+            state: {},
+            uri: '/quotes',
+            title: 'Quotes',
+            viewEvent: QuotesEvents
         }
     };
 

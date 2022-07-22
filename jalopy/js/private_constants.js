@@ -1,1 +1,0 @@
-const BACKEND_HOST = "";

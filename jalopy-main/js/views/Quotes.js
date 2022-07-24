@@ -1,6 +1,7 @@
-
 //HTML function
+let data;
 export function QuotesView(){
+    data = props
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -9,16 +10,40 @@ export function QuotesView(){
     <title>Quotes</title>
 </head>
 <body>
-    <div id="my-quotes"></div>
+    <table id="my-quotes"></table>
 </body>
 </html>
-
 `;
+
+
+//     let html = `
+// <div class="container">
+//     <h1>Quotes</h1>
+//     `;
+//     for(let i = 0; i < data.quotes.length; i++) {
+//         let Q  = data.quotes[i];
+//         let A = data.author[i];
+//         html += `
+//     <tr>
+//                           <td class ="blockQ bg-secondary">
+//                             ${Q}
+//                           </td>
+//                           <hr>
+//                           <td class ="blockQ bg-light">
+//                             <br>
+//                             ${A}
+//                           </td>
+//                      <tr>`
+//     }
+//     html += `
+// </div>
+// `;
+//     return html
 }
 
 // JS function
 export default function QuotesEvents(){
-    const quotes = [
+    const quotesL = [
         {
             quote: "War is organized murder and torture against our brothers.",
             author: "Alfred Adler"
@@ -58,17 +83,32 @@ export default function QuotesEvents(){
         {
             quote: "Men, when they fight in movies, it's a very different style. Harrison Ford was so cool when he had the whip, and Bruce Lee was such an artist that you couldn't take your eyes off of him.",
             author: "Lucy Liu"
-        },
+        }
     ]
-
+    //
+    // this works with the local array above also. Have to replace props with const 'quotesL'
     function addQuote(){
         let placeQuotesHere = document.querySelector("#my-quotes");
-        for(let i =0;i < quotes.length;i++){
-                let Q  = quotes[i].quote;
-                let A = quotes[i].author;
-                placeQuotesHere.innerHTML += `<br> <div class ="blockQ bg-secondary">${Q}, ${A}</div> <br>`
-            }
+        for(let i =0;i < quotesL.length;i++){
+            let Q  = quotesL.quotes[i];
+            let A = quotesL.author[i];
+            placeQuotesHere.innerHTML +=
+                `<tr>
+                          <td class ="blockQ bg-secondary">
+                            ${Q}
+                          </td>
+                          <hr>
+                          <td class ="blockQ bg-light">
+                            <br>
+                            ${A}
+                          </td>
+                     <tr>`
         }
+    }
     addQuote();
+//
 }
+
+
+
 

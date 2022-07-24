@@ -47,9 +47,9 @@
       userInput+=event.key;
       console.log(userInput)
       if(userInput.includes(seq)){
+        soundEffect.play();
         hideBox();
         showImg();
-        soundEffect.play();
         // alert("You have added 30 lives!")
       }
     });

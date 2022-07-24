@@ -55,8 +55,66 @@
     document.addEventListener("DOMContentLoaded", function () {
       // add your code here
 
-      let addBtn = document.getElementById("add-todo");
-      addBtn.addEventListener("click", addTodo);
+
+
+
+
+
+
+      function clickAddTodoEnterBtn(){
+        let addTDBtn = document.getElementById("add-todo");
+        addTDBtn.addEventListener("click", addTodo);
+      }
+      clickAddTodoEnterBtn();
+
+
+
+
+      // tried to make enter also add a card, did not work....perhaps browser already is listening for enter as a default?
+      //try: prevent default, with key code ==13 for enter
+
+
+      // function keyboardEnter() {
+      //   const seq = "Enter"
+      //   let listenForEnter = ""
+      //   let textInput = document.querySelector("#add-todo-text");
+      //   textInput.addEventListener("onkeyup", function(event){
+      //     // event.key is each press on the keyboard?
+      //     listenForEnter+=event.key;
+      //     console.log(listenForEnter)
+      //     if(listenForEnter.includes(seq)){
+      //       event.preventDefault();
+      //       addTodo();
+      //       alert("this works")
+      //     }
+      //   })
+      // }
+      // keyboardEnter();
+
+      // for listening to enter btn
+      const seq = "Enter"
+      let userInput = ""
+        let textInput = document.querySelector("#add-todo-text");
+      function listenForEnter(){
+        textInput.addEventListener("keyup", function(event) {
+          //code here to store keypress to userInput
+          //need to reference userInput
+          //only want to track if enter is pressed at all, not entire input value, thus no +=
+          userInput=event.key;
+          event.preventDefault();
+          console.log(userInput);
+          //if statement not working
+          if(userInput === seq){
+           // addTodo();
+            alert("text")
+          }
+        });
+      }
+      listenForEnter()
+
+
+
+
 
       function addTodo() {
         //this references the input box, grabs its value, and assigns the value of input box to uI as a let
@@ -94,7 +152,6 @@
           element.addEventListener("click",function(event){
             element.parentElement.parentElement.remove();
           })
-
         })
 
 

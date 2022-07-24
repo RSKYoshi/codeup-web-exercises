@@ -12,3 +12,16 @@ p {
     margin-right: auto;
     display: block;
 }
+/*.jalopy-nav {*/
+/*    position: fixed;*/
+/*    z-index: 1000;*/
+/*    width: 100%;*/
+/*    ;*/
+/*}*/
+#app {
+    background: lightgray;
+}
+
+footer {
+    margin-top: 100%;
+}

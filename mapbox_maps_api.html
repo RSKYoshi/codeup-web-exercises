@@ -84,6 +84,7 @@
     clickToR();
 
 //everytime I hover on the body element
+//change table to map on line 88 get element by ID to target only the mapbox
     let table = document.getElementById("table");
     table.addEventListener("mouseenter", function() {
         //toggle the body element to turn dark
@@ -179,7 +180,7 @@
     // mZ.setPopup(zippysPopup);
 
 
-    let restaurants = [{
+    let yRestaurants = [{
         LngLat: [ -157.95415064944538, 21.388018151627197],
         name: "<h1>Gyotaku <hr></h1>",
         type: "Japanese <hr>",
@@ -207,31 +208,52 @@
     }
     ]
 
-    const markersCreatedByYoshi =
+    let markers = []
+
+    let markersCreatedByYoshi =
         function yMarkers() {
-        restaurants.forEach(function (restaurant) {
+        yRestaurants.forEach(function (restaurant) {
             //assign each restaurant to let using object destructuring , then use ${} in the <p><p> to add to popup.
             //or assign restaurant to popup here...and then also attach a marker to each restaurant here somehow...
             //restaurant data to turn into markers and popups
             const newMarker = new mapboxgl.Marker().setLngLat(restaurant.LngLat).addTo(map);
             const popUp = new mapboxgl.Popup().setHTML(`<p> ${restaurant.src} ${restaurant.name} ${restaurant.type} ${restaurant.cost} </p>`);
             newMarker.setPopup(popUp);
+            markers.push(newMarker);
         });
     };
+
+
 //to delete markers created by const markersCreatedByYoshi:
     //create new class upon clicking the hide button. new class will toggle "display none". Need to target .mapboxgl-marker
 
-
-    // let yoshisMarkerArray = [markersCreatedByYoshi]
-    let hideMBtn = document.getElementById("hideYM");
-    hideMBtn.addEventListener("click", function(){
-        let yoshisMarkers = document.getElementsByClassName("mapboxgl-marker");
-        yoshisMarkers.createElement
-
-    //     for(let i=0;i<yoshisMarkerArray.length;i++){
-    //         map.remove();
+    const hideMarkersBtn = document.getElementById("hideYM");
+    hideMarkersBtn.addEventListener("click", function() {
+        //this just moves all markers into the ocean.....why
+    //     let marker = document.querySelectorAll(".mapboxgl-marker");
+    //     for(let i=0;i<marker.length;i++){
+    //         marker[i].setAttribute("class", "display: none");
+    //         marker[i] = ""
     //     }
+    // })
+
+    for(let i=0; i<markers.length;i++) {
+        markers[i].remove();
+    }
     })
+
+
+        // code below to remove markers
+        // if (yRestaurants !== null) {
+            // for (let i = yRestaurants.length - 1; i >= 0; i--) {
+            //     yRestaurants[i].setAttribute("class", "display: none");
+            // }
+        // for (let i = 0; i < yRestaurants.length; i++) {
+        //         markersCreatedByYoshi[i] = ""
+        //
+        //     }
+        // }
+    // })
 
 
     //to grab user value in the input button and search location

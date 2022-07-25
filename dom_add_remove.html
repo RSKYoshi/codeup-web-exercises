@@ -94,7 +94,7 @@
       // for listening to enter btn
       const seq = "Enter"
       let userInput = ""
-        let textInput = document.querySelector("#add-todo-text");
+        let textInput = document.querySelector("body");
       function listenForEnter(){
         textInput.addEventListener("keyup", function(event) {
           //code here to store keypress to userInput
@@ -105,8 +105,8 @@
           console.log(userInput);
           //if statement not working
           if(userInput === seq){
-           // addTodo();
-            alert("text")
+           addTodo();
+           //  alert("text")
           }
         });
       }

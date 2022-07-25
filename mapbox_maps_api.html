@@ -51,8 +51,8 @@
     <select id="dropdownZooms">
         <option id="x1">x1</option>
         <option id="x5">x5</option>
-        <option id="x10">x10</option>
         <option id="x15">x15</option>
+        <option id="x20">x20</option>
     </select>
 </label>
 
@@ -112,61 +112,92 @@
 
 
         //zoom in btn x1
-    const zoomIn1 = document.getElementById("zoomInBtn");
-    zoomIn1.addEventListener("click", function(){
-        let zoomIn = map.getZoom();
-        // uncomment to change increment below: specifies increment by 5 (unit of measurement is determined by mapbox)
-        // zoomIn+=5
-        zoomIn++
-        map.setZoom(zoomIn);
-    })
-    // zoom out btn x1
-    const zoomOut1 = document.getElementById("zoomOutBtn");
-    zoomOut1.addEventListener("click", function (){
-        let zoomOut = map.getZoom();
-        // uncomment to change decrement below: specifies decrement by 5 (unit of measurement is determined by mapbox)
-        // zoomOut-=5
-        zoomOut--
-        map.setZoom(zoomOut);
-    })
+
+
+        const zoomBtn = document.getElementById("zoomInBtn");
+        zoomBtn.addEventListener("click", function () {
+            let zoomIn = map.getZoom();
+            // uncomment to change increment below: specifies increment by 5 (unit of measurement is determined by mapbox)
+            // zoomIn+=5
+            zoomIn++
+            map.setZoom(zoomIn);
+        })
+        // zoom out btn x1
+
+        const zoomOutBtn = document.getElementById("zoomOutBtn");
+        zoomOutBtn.addEventListener("click", function () {
+            let zoomOut = map.getZoom();
+            // uncomment to change decrement below: specifies decrement by 5 (unit of measurement is determined by mapbox)
+            // zoomOut-=5
+            zoomOut--
+            map.setZoom(zoomOut);
+        })
 
 
 
-    //drop markers btn
-    let dMBtn = document.getElementById("dropYM");
-    dMBtn.addEventListener("click", function(){
-        markersCreatedByYoshi();
-    })
-    //hide marker btn is below const: markersCreatedByYoshi
 
 
     //select x5 zoom
-    let selectZoomx1 = document.getElementById("dropdownZooms");
-    selectZoomx1.addEventListener("input", function(){
+    let allZoomDropdowns = document.getElementById("dropdownZooms");
+    allZoomDropdowns.addEventListener("change", function(event){
 
-            const zoomIn5 = document.getElementById("x5");
-            zoomIn5.addEventListener("change", function () {
+        let dropDownSelected = event.target.value
+
+        if(dropDownSelected === "x1"){
+            // alert("x1");
+            zoomBtn.addEventListener("click", function zx1() {
                 let zoomIn = map.getZoom();
-                // uncomment to change increment below: specifies increment by 5 (unit of measurement is determined by mapbox)
+                zoomIn++
+                map.setZoom(zoomIn);
+            })
+            zoomOutBtn.addEventListener("click", function zOx1() {
+                let zoomOut = map.getZoom();
+                zoomOut--
+                map.setZoom(zoomOut);
+            })
+        } else if(dropDownSelected === "x5"){
+            // alert("x5");
+            zoomBtn.addEventListener("click", function zx5() {
+                let zoomIn = map.getZoom();
                 zoomIn += 5
                 map.setZoom(zoomIn);
             })
-            // zoom out btn
-            const zoomOut5 = document.getElementById("x5");
-            zoomOut5.addEventListener("change", function () {
+            zoomOutBtn.addEventListener("click", function zOx5() {
                 let zoomOut = map.getZoom();
-                // uncomment to change decrement below: specifies decrement by 5 (unit of measurement is determined by mapbox)
                 zoomOut -= 5
                 map.setZoom(zoomOut);
             })
+        } else if(dropDownSelected === "x15"){
+            // alert("x15");
+            zoomBtn.addEventListener("click", function zx15() {
+                let zoomIn = map.getZoom();
+                zoomIn += 15
+                map.setZoom(zoomIn);
+            })
+            zoomOutBtn.addEventListener("click", function zOx15() {
+                let zoomOut = map.getZoom();
+                zoomOut -= 15
+                map.setZoom(zoomOut);
+            })
+        } else if(dropDownSelected === "x20"){
+            // alert("x20");
+            zoomBtn.addEventListener("click", function zx20() {
+                let zoomIn = map.getZoom();
+                zoomIn += 20
+                map.setZoom(zoomIn);
+            })
+            zoomOutBtn.addEventListener("click", function zOx20() {
+                let zoomOut = map.getZoom();
+                zoomOut -= 20
+                map.setZoom(zoomOut);
+            })
+        }
     });
 
 
-    // const zoomx5 =
-    // const zoomx10 =
-    // const xoomx15 =
 
-    //these are working markers and popups, outside any loop
+    //Boilerplate markers and popups!!!
+    // --------------=-=-=-=-=-=-=-=-=-=-
     // const mG = new mapboxgl.Marker().setLngLat([-157.95415064944538, 21.388018151627197]).addTo(map);
     // let gyotakuPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for gyotaku </p>");
     // mG.setPopup(gyotakuPopup);
@@ -178,7 +209,7 @@
     // const mZ = new mapboxgl.Marker().setLngLat([-158.08197427369848, 21.334692186725366]).addTo(map);
     // let zippysPopup = new mapboxgl.Popup().setHTML("<p> interpolation here for zippys </p>");
     // mZ.setPopup(zippysPopup);
-
+    // -----------=-=-=-=-=-=-=-=-=-=-=-=-
 
     let yRestaurants = [{
         LngLat: [ -157.95415064944538, 21.388018151627197],
@@ -208,6 +239,13 @@
     }
     ]
 
+
+    //drop markers btn
+    let dMBtn = document.getElementById("dropYM");
+    dMBtn.addEventListener("click", function(){
+        markersCreatedByYoshi();
+    })
+    //array of markers created from yRestaurants
     let markers = []
 
     let markersCreatedByYoshi =
@@ -223,13 +261,11 @@
         });
     };
 
-
 //to delete markers created by const markersCreatedByYoshi:
-    //create new class upon clicking the hide button. new class will toggle "display none". Need to target .mapboxgl-marker
 
     const hideMarkersBtn = document.getElementById("hideYM");
     hideMarkersBtn.addEventListener("click", function() {
-        //this just moves all markers into the ocean.....why
+        //this just moves all markers into the ocean.....why?
     //     let marker = document.querySelectorAll(".mapboxgl-marker");
     //     for(let i=0;i<marker.length;i++){
     //         marker[i].setAttribute("class", "display: none");
@@ -237,23 +273,12 @@
     //     }
     // })
 
+    //Remove markers:
+    //this is what works! loops over the array of markers pushed into markers by const newMarker inside yMarkers function
     for(let i=0; i<markers.length;i++) {
         markers[i].remove();
     }
     })
-
-
-        // code below to remove markers
-        // if (yRestaurants !== null) {
-            // for (let i = yRestaurants.length - 1; i >= 0; i--) {
-            //     yRestaurants[i].setAttribute("class", "display: none");
-            // }
-        // for (let i = 0; i < yRestaurants.length; i++) {
-        //         markersCreatedByYoshi[i] = ""
-        //
-        //     }
-        // }
-    // })
 
 
     //to grab user value in the input button and search location

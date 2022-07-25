@@ -6,7 +6,7 @@
     margin-right: 0;
 }
 #yoshiPng:hover {
-    /*animation: spin-horizontal 7s infinite linear;*/
+    animation: spin-horizontal 7s infinite linear;
     transition: .7s;
     transform: rotate(360deg);
 }
@@ -41,8 +41,11 @@
 }
 .body {
     background: rgba(171, 167, 171, 0.73);
+    /*background-color: #252525;*/
+    height: 100vh;
 }
 
+/*uncomment below and change .body above to activate toggling lightbox*/
 .light-box{
     background-color: #252525;
 }

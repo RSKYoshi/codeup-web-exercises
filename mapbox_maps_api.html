@@ -145,16 +145,19 @@
 
         if(dropDownSelected === "x1"){
             // alert("x1");
-            zoomBtn.addEventListener("click", function zx1() {
-                let zoomIn = map.getZoom();
-                zoomIn++
-                map.setZoom(zoomIn);
+            zoomBtn.removeEventListener("change", function(){
+                zoomBtn.addEventListener("click", function zx1() {
+                    let zoomIn = map.getZoom();
+                    zoomIn++
+                    map.setZoom(zoomIn);
+                })
+                zoomOutBtn.addEventListener("click", function zOx1() {
+                    let zoomOut = map.getZoom();
+                    zoomOut--
+                    map.setZoom(zoomOut);
+                })
             })
-            zoomOutBtn.addEventListener("click", function zOx1() {
-                let zoomOut = map.getZoom();
-                zoomOut--
-                map.setZoom(zoomOut);
-            })
+
         } else if(dropDownSelected === "x5"){
             // alert("x5");
             zoomBtn.addEventListener("click", function zx5() {

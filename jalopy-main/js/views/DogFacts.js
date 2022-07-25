@@ -1,8 +1,4 @@
     export default function dogFactsHTMLFunction(props) {
-
-
-
-
     //this will output the html for the page
             let html = `
 <div class="container">
@@ -19,6 +15,7 @@
             }
             html += `
     <button class="form-control" id="show-fact-btn">Show Facts</button>
+    <a id="anchor" data-link href="/insert-dog-fact">Insert Dog Fact</a>
 </div>
 `;
         return html;
@@ -63,6 +60,8 @@
                  facts[i].style.visibility = "visible";
             }
         });
+
+
 }
 
 

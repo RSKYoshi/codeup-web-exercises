@@ -1,3 +1,6 @@
+
+import InsertQuotes, {InsertQuoteEvents} from "./views/AddQuotes.js"
+import InsertDogView, {InsertDogFactEvents} from "./views/AddDogFact.js";
 import Home, {HomeEvents} from "./views/Home.js";
 import aboutHTMLFunctions , {aboutJSFunctions} from "./views/About.js";
 import Error404 from "./views/Error404.js";
@@ -9,7 +12,7 @@ import {RegisterEvent} from "./views/Register.js";
 import UserIndex, {UserEvents} from "./views/User.js";
 import Logout, {LogoutEvents} from "./views/Logout.js";
 import DogFactsView, {DogFactsEvents} from "./views/DogFacts.js";
-import QuotesEvents, {QuotesView} from "./views/Quotes.js";
+import QuotesView, {QuotesEvents} from "./views/Quotes.js";
 
 
 /**
@@ -80,7 +83,7 @@ export default function router(URI) {
                     url: "https://dogfacts.fulgentcorp.com:12250/v1/facts?random=false&limit=10",
                     headers: {
                         'Accept': 'application/json',
-                        'Authorization': "venus-119"
+                        'Authorization': DOG_QUOTE_API_KEY
                     }
                 }
             },
@@ -92,22 +95,35 @@ export default function router(URI) {
             returnView: QuotesView,
             state: {
                 quotes: {
-                    url: "https://quotes.fulgentcorp.com:12250/v1/facts?random=false&limit=10",
+                    url: "https://quotes.fulgentcorp.com:12250/v1/quotes?random=false&limit=30",
                     headers: {
                         'Accept': 'application/json',
-                        'Authorization': "venus-119"
+                        'Authorization': QUOTE_API_KEY
                     }
                 }
             },
             uri: '/quotes',
             title: 'Quotes',
             viewEvent: QuotesEvents
+        },
+        '/insert-dog-fact': {
+            returnView: InsertDogView,
+            state: {},
+            uri: '/insert-dog-fact',
+            title: 'Insert Dog Fact',
+            viewEvent: InsertDogFactEvents
+        },
+        '/insert-new-quote': {
+            returnView: InsertQuotes,
+            state: {},
+            uri: '/insert-new-quote',
+            title: 'Insert New Quote',
+            viewEvent: InsertQuoteEvents
         }
     }
-    // if we see a URI with index.html then interpret that as a route for /
-    if(URI.indexOf("index.html") > -1) {
+        // if we see a URI with index.html then interpret that as a route for /
+        if(URI.indexOf("index.html") > -1){
         URI = "/";
     }
-
-    return routes[URI];
+        return routes[URI];
 }

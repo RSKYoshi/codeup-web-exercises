@@ -60,9 +60,8 @@
 
 
 
-
+      let addTDBtn = document.getElementById("add-todo");
       function clickAddTodoEnterBtn(){
-        let addTDBtn = document.getElementById("add-todo");
         addTDBtn.addEventListener("click", addTodo);
       }
       clickAddTodoEnterBtn();
@@ -92,21 +91,20 @@
       // keyboardEnter();
 
       // for listening to enter btn
-      const seq = "Enter"
       let userInput = ""
-        let textInput = document.querySelector("body");
+        let textInput = document.querySelector("#add-todo-text");
       function listenForEnter(){
-        textInput.addEventListener("keyup", function(event) {
+        //keypress here will capture enter
+        textInput.addEventListener("keypress", function(event) {
           //code here to store keypress to userInput
           //need to reference userInput
           //only want to track if enter is pressed at all, not entire input value, thus no +=
-          userInput=event.key;
-          event.preventDefault();
+          // userInput=event.key;
           console.log(userInput);
           //if statement not working
-          if(userInput === seq){
-           addTodo();
-           //  alert("text")
+          if(event.key === "Enter"){
+            event.preventDefault();
+            addTDBtn.click();
           }
         });
       }

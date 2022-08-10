@@ -62,7 +62,7 @@ function addExistingQuote(){
                         <br>
                         ${A}
                       </td>
-                 <tr>`
+             <tr>`
     }
 }
 

@@ -28,6 +28,7 @@
     display: block;
 }
 #logo {
+    margin-top: 5vh;
     margin-left: 11%;
     border-width: 3rem;
     border-radius: 30px;
